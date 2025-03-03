@@ -51,9 +51,7 @@
     width: 100%;
 }
 
-.contactFormSubmitBtn svg {
-    font-size: inherit;
-}
+
 
 .errorText {
     color: red;

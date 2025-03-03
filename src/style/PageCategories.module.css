@@ -33,3 +33,16 @@
     font-size: inherit;
     font-weight: inherit;
 }
+
+@media (max-width: 768px) {
+    .pageCategoriesHeading{
+        font-weight: 700;
+        font-size: 5.85em;
+        letter-spacing: 0.2px;
+    }
+
+    .sliderBtn {
+      font-size: 3em;
+    }
+ 
+}

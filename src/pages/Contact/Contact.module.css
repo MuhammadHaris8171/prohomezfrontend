@@ -30,3 +30,42 @@
 .contactDetailBoxPara svg{
     font-size: 1.25em;
 }
+
+@media screen and (max-width: 767px) {
+    .contact{
+        padding: 10em;
+        margin: 10em;
+    }
+    .contactHeading{
+        font-family: 'Figtree';
+        font-weight: 700;
+        font-size: 5.7em;
+    }
+    .contactPara{
+        width: 60%;
+        margin: auto;
+        font-family: 'Poppins';
+        font-size: 2.7em;
+
+    }
+    .contactDetailBox{
+        padding: 5.2em ;
+        margin: 3em;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    }
+    .contactDetailBoxHeading{
+        font-family: 'Figtree';
+        font-weight: 600;
+        font-size: 5.7em;
+        margin-bottom: 0.3em;
+    }
+    .contactDetailBoxPara{
+        font-family: 'Poppins';
+        font-size: 3.05em;
+        font-weight: 400;
+    }
+    .contactDetailBoxPara svg{
+        font-size: 3.25em;
+    }
+}

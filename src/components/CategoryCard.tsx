@@ -8,7 +8,7 @@ interface CategoryCardProps {
 
 function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <Link to={`${category.src}` || "#"} className="text-decoration-none">
+    <Link to={category.src || "#"} className="text-decoration-none">
         <div className={`${styles.categoryCard} d-flex justify-content-center align-items-center`}>
             <div className={`${styles.categoryImgBox}`}>
                 <img src={category.img} alt={category.buttonText} />

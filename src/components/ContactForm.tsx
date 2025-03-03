@@ -167,7 +167,7 @@ function ContactForm(): JSX.Element {
                   <div className={styles.spinner}></div>
                 ) : (
                   <>
-                    Send a Message <BsSendFill className="ms-2" />
+                    Send a Message
                   </>
                 )}
               </button>

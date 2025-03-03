@@ -1,5 +1,5 @@
 .pageHero{
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
 }
 .pageHero::before{
@@ -60,6 +60,7 @@
 .inputQuickSearchBox:hover {
     background: #0808088f;
 }
+<<<<<<< HEAD
 .real-estate-link-1{    
 }
 @media all and (max-width:600px) {
@@ -67,3 +68,25 @@
         font-size: 8rem;
     }  
 }
+=======
+.real-estate-link-1{
+    font-size:2em
+}
+
+@media (max-width: 768px) {
+    .pageHeroHeading{
+        font-size: 8em;
+    }
+
+    .pageHeroDescription{
+        font-family: 'Poppins';
+        font-size: 3.15em;
+        font-weight: 500;
+    }
+
+    .real-estate-link-1{
+        font-size:5em
+    }
+
+}
+>>>>>>> 09e56ed8089657cf637300bd6aa301ea0160f9db

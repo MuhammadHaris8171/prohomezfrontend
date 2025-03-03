@@ -1,21 +1,17 @@
-.exploreProductHeading {
-    font-family: 'Figtree';
-    font-weight: 700;
-    font-size: 1.85em;
-    letter-spacing: 0.2px;
-}
+/* Category Buttons */
 .categoriesDisplayBtn {
-    font-family: 'Figtree';
+    font-family: 'Figtree', sans-serif;
     font-weight: 500;
     font-size: 0.9em;
     border: 1px solid #0b0b0b;
-    border-radius: 0px;
-    margin-right: 0.7em;
-    transition: all 0.3s;
+    border-radius: 5px;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in-out;
+    margin: 5px; /* Adds spacing between buttons */
 }
 
 .categoriesDisplayBtn:hover {
-    color: inherit;
+    color: white;
     background-color: var(--main-primary-color);
 }
 
@@ -23,4 +19,23 @@
     background: var(--main-primary-color);
     border-color: var(--main-primary-color);
     font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .exploreProductHeading {
+        font-size: 5.5em;
+    }
+
+    .categoriesDisplayBtn {
+        font-size: 3em;
+        padding: 2px 2px;
+        margin-bottom: 10px; /* Adds gap between buttons */
+        display: block; /* Ensures buttons stack vertically */
+        width: 100%; /* Makes them full width */
+    }
+
+    .categoryActive {
+        font-size: 3em;
+    }
 }

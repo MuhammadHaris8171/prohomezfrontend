@@ -1,33 +1,33 @@
 import styles from '../style/MainHeroDivider.module.css';
 import realEstateIllustration from '../assets/images/realestate-icon.webp';
 import homeIllustration from '../assets/images/pexels-amar-saleem-15661-70441.jpg';
-import anotherIllustration from '../assets/images/still-life-various-cleaning-products.jpg'; // Second image
+import anotherIllustration from '../assets/images/still-life-various-cleaning-products.jpg';
 import { Link } from 'react-router-dom';
 
 function MainHeroDivider() {
   return (
     <section className={`${styles.mainHeroDivider}`}>
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container">
+        <div className="row g-4">
           {/* Left Section */}
-          <div className={`col-md-6 ${styles.heroBoxContainer} ${styles.realestateBackground} position-relative`}>
-            <div className={`${styles.heroBox}`}>
-              <div className={`${styles.heroBoxContent} position-relative`}>
+          <div className="col-lg-6 col-md-12">
+            <div className={`${styles.heroBoxContainer} ${styles.realestateBackground} position-relative`}>
+              <div className={`${styles.heroBox} text-center`}>
                 <img src={homeIllustration} alt="Pro Homez Property" className={`${styles.mainHeroIllustration}`} />
-                <h2 className={`${styles.mainHeroHeading}`}>Your Property, Your Future</h2>
-                <p className={`${styles.mainHeroParagraph} text-center`}>Design your lifestyle with beautiful home.</p>
+                <h2 className={`${styles.mainHeroHeading} mt-3`}>Your Property, Your Future</h2>
+                <p className={`${styles.mainHeroParagraph}`}>Design your lifestyle with a beautiful home.</p>
                 <Link to="/real-estate" className={`btn ${styles.mainHeroBtn}`}>Browse Properties</Link>
               </div>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className={`col-md-6 ${styles.heroBoxContainer} ${styles.homeProductBackground} position-relative`}>
-            <div className={`${styles.heroBox}`}>
-              <div className={`${styles.heroBoxContent} position-relative`}>
+          <div className="col-lg-6 col-md-12">
+            <div className={`${styles.heroBoxContainer} ${styles.homeProductBackground} position-relative`}>
+              <div className={`${styles.heroBox} text-center`}>
                 <img src={anotherIllustration} alt="Pro Homez Products" className={`${styles.mainHeroIllustration}`} />
-                <h2 className={`${styles.mainHeroHeading}`}>Shop Home Products</h2>
-                <p className={`${styles.mainHeroParagraph} text-center`}>Design your lifestyle with beautiful home products.</p>
+                <h2 className={`${styles.mainHeroHeading} mt-3`}>Shop Home Products</h2>
+                <p className={`${styles.mainHeroParagraph}`}>Design your lifestyle with beautiful home products.</p>
                 <Link to="/home-products" className={`btn ${styles.mainHeroBtn}`}>Shop Now</Link>
               </div>
             </div>
