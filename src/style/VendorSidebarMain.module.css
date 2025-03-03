@@ -40,3 +40,53 @@
 .sidebarlistContainer{
     margin-top: 1em;
 }
+@media all and (max-width:500px) {
+    .vendorSidebarMainBox a{
+        font-size: 3rem;
+        padding: 0rem 0em;
+    }
+    .vendorSidebarMainBox{
+        /* border: 2px solid red; */
+        position: sticky;
+        /* border-bottom: 2px solid black; */
+        background-color: white;
+        box-shadow: 0px 2rem 8px rgba(0, 0, 0, 0.1);
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        min-height: 7vh;
+        max-height: 10vh;
+        padding: 0rem 0em;
+        margin-bottom: 100vh;
+    }
+    .sidebarMenuBox{
+        padding: 0em 0em;
+    }
+    .sidebarlistContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: center; */
+        /* border: 2px solid blue; */
+        height: 100%;
+        width: 100%;
+        gap: 5rem;
+        margin-right:9rem;
+    }
+    .sidebarMenuList a{
+        font-size: 5rem;
+    }
+    .sidebarMenuList a span {
+        display: none; /* Hide text */
+    }
+    .sidebarLogoBox{
+        width: 40rem;
+        /* border: 2px solid gray; */
+    }
+    .sidebarLogoBox img{
+        object-fit: cover;
+    }
+    .sidebarMenuHeading{
+        display: none;
+    }
+}

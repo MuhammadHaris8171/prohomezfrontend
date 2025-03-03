@@ -17,3 +17,24 @@
     font-size: 1.4em;
     font-weight: 600;
 }
+@media all and (max-width:600px) {
+ .vendorDashboardLink   {
+    font-size: 5rem;
+    margin-top: 10vh;
+    
+ }
+ .allProducts{
+  font-size: 6rem;
+}
+.vendorProductBox h3{
+    /* border: 2px solid blue; */
+    font-size: 6rem;
+}
+.vendorProductBox p{
+    font-size: 5rem;
+}
+.vendorDashboard{
+    margin-left: 0 !important;
+    padding: 0 !important;
+}
+}

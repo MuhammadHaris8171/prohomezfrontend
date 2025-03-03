@@ -50,32 +50,38 @@ function LoginForm() {
     return !Object.values(newErrors).some((error) => error);
   };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-        if (validate()) {
-            setIsLoading(true);
-            setErrors((prevErrors) => ({ ...prevErrors, server: '' }));
+    console.log("Form Data:", formData); // Logs user input
+    console.log("Backend URL:", import.meta.env.VITE_PROHOMEZ_BACKEND_URL); // Logs the backend URL
 
-            try {
-            const response = await axios.post(`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/api/auth/login`, formData);
+    if (validate()) {
+      setIsLoading(true);
+      setErrors((prevErrors) => ({ ...prevErrors, server: '' }));
 
-            localStorage.setItem('token', response.data.token);
+      try {
+        const apiUrl = `${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/api/auth/login`;
+        console.log("Login API URL:", apiUrl); // Logs the final API endpoint
 
-            // Redirect to vendor dashboard
-            navigate('/vendor-dashboard');
-            } catch (error: any) {
-            console.error('Login error:', error);
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                server: error.response?.data?.message || 'An error occurred during login.',
-            }));
-            } finally {
-            setIsLoading(false);
-            }
-        }
-    };
+        const response = await axios.post(apiUrl, formData);
 
+        console.log("Login Response:", response.data); // Logs the response from the server
+
+        localStorage.setItem('token', response.data.token);
+
+        navigate('/vendor-dashboard');
+      } catch (error: any) {
+        console.error("Login Error:", error);
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          server: error.response?.data?.message || 'An error occurred during login.',
+        }));
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
 
   return (
     <>

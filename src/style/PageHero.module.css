@@ -60,6 +60,10 @@
 .inputQuickSearchBox:hover {
     background: #0808088f;
 }
-.real-estate-link-1{
-    
+.real-estate-link-1{    
+}
+@media all and (max-width:600px) {
+    .pageHero h2{
+        font-size: 8rem;
+    }  
 }

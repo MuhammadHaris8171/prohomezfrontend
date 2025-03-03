@@ -38,28 +38,31 @@ function VendorDashboard() {
   }
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-2 px-0">
-          <VendorSidebarMain isAdmin={isAdmin} />
-        </div>
-        <div className="col-10">
-          <div style={{ flex: 1, padding: '20px' }}>
-            <Routes>
-              <Route path="overview" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
-              <Route path="media" element={<DisplayMedia isAdmin={isAdmin} />} />
-              <Route path="products" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
-              <Route path="vendors" element={<VendorDashboardVendors/>} />
-              <Route path="orders" element={<Orders isAdmin={isAdmin} />} />
-              <Route path="payment" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
-              <Route path="profile" element={<VendorProfile />} />
-              {!isAdmin && <Route path="products/create" element={<CreateProduct />} />}
-              <Route path="products/edit/:slug" element={<EditProduct />} />
-            </Routes>
+      <div className="container-fluid">
+        <div className="row">
+          {/* Sidebar: Hidden on small and medium screens */}
+          <div className="col-lg-2 col-md-0 col-sm-0 px-0">
+            <VendorSidebarMain isAdmin={isAdmin} />
+          </div>
+    
+          {/* Main content: Full width on small/medium screens, 10 columns on large screens */}
+          <div className="col-lg-10 col-md-12 col-sm-12">
+            <div style={{ flex: 1, padding: '20px' }}>
+              <Routes>
+                <Route path="overview" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
+                <Route path="media" element={<DisplayMedia isAdmin={isAdmin} />} />
+                <Route path="products" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
+                <Route path="vendors" element={<VendorDashboardVendors />} />
+                <Route path="orders" element={<Orders isAdmin={isAdmin} />} />
+                <Route path="payment" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
+                <Route path="profile" element={<VendorProfile />} />
+                {!isAdmin && <Route path="products/create" element={<CreateProduct />} />}
+                <Route path="products/edit/:slug" element={<EditProduct />} />
+              </Routes>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div>    
   );
 }
 

@@ -23,14 +23,14 @@ function VendorSidebarMain({ isAdmin }: VendorSidebarMainProps) {
         <div className={`${styles.sidebarMenuBox}`}>
             <h4 className={`${styles.sidebarMenuHeading}`}>Menu</h4>
             <ul className={`${styles.sidebarlistContainer} list-unstyled`}>
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/overview" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><BsFillGridFill /> Overview</NavLink></li>
-                {isAdmin && <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/vendors" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><FaPerson /> All Vendors</NavLink></li>}
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/media" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><BsFillGridFill /> Media</NavLink></li>
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/products" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><FaShoppingBag /> Products</NavLink></li>
-                {!isAdmin && <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/products/create" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><IoIosAddCircle /> Add New Product</NavLink></li>}
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/orders" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><GiShoppingCart /> Orders</NavLink></li>
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/payment" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><MdOutlinePayment /> Payment</NavLink></li>
-                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/profile" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><CgProfile /> Profile</NavLink></li>
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/overview" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><BsFillGridFill /> <span>Overview</span></NavLink></li>
+                {isAdmin && <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/vendors" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><FaPerson /><span> All Vendors</span></NavLink></li>}
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/media" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><BsFillGridFill /> <span>Media</span></NavLink></li>
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/products" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><FaShoppingBag /> <span>Products</span></NavLink></li>
+                {!isAdmin && <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/products/create" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><IoIosAddCircle /> <span>Add New Product</span></NavLink></li>}
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/orders" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><GiShoppingCart /> <span>Orders</span></NavLink></li>
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/payment" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><MdOutlinePayment /> <span>Payment</span></NavLink></li>
+                <li className={`${styles.sidebarMenuList}`}><NavLink to="/vendor-dashboard/profile" className={({ isActive }) => isActive ? `${styles.activeMenu}` : ''} ><CgProfile /> <span>Profile</span></NavLink></li>
             </ul>
         </div>
     </div>

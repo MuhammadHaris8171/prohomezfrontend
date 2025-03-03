@@ -31,7 +31,7 @@ function ProductList({ content }: ProductListProp) {
 
   return (
     <div className={`${styles.productList} d-flex`}>
-      <div className={styles.imgBox}>
+      <div className={styles.a}>
         <img src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${content.featureImage}`} alt={content.productName || 'Pro Homez'} />
       </div>
       <div className={styles.productInfoBox}>

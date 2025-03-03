@@ -61,3 +61,15 @@
     text-decoration: underline;
     color: #0068ff;
 }
+@media all and (max-width :600px) {
+ .productList{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blue; */
+    margin-top: 5rem;
+ }   
+ .actionBtns{
+    font-size: 5rem;
+    margin-right: 2rem;
+ }
+}
