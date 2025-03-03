@@ -39,8 +39,11 @@ importers:
         specifier: ^9.2.0
         version: 9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
-        specifier: ^6.28.0
+        specifier: ^6.30.0
         version: 6.30.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      redux:
+        specifier: ^5.0.1
+        version: 5.0.1
       sweetalert2:
         specifier: ^11.14.5
         version: 11.17.2

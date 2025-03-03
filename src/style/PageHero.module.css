@@ -60,7 +60,6 @@
 .inputQuickSearchBox:hover {
     background: #0808088f;
 }
-<<<<<<< HEAD
 .real-estate-link-1{    
 }
 @media all and (max-width:600px) {
@@ -68,7 +67,6 @@
         font-size: 8rem;
     }  
 }
-=======
 .real-estate-link-1{
     font-size:2em
 }
@@ -89,4 +87,3 @@
     }
 
 }
->>>>>>> 09e56ed8089657cf637300bd6aa301ea0160f9db
