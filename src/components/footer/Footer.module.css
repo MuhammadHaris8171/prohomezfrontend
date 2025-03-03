@@ -85,6 +85,9 @@
     font-weight: inherit;
     color: inherit;
 }
+.footerAbout{
+    font-size: 1em;
+}
 @media screen and (max-width: 1199px) {
     .footerHeading{
         font-size: 2.2em;
@@ -128,6 +131,15 @@
     
     .copyrightClaim {
         font-size: 2.2em;
+    }
+    .footerAbout{
+        font-size: 4em;
+    }
+
+    .footerSocialLink svg{
+        font-size: 3em;
+        font-weight: inherit;
+        color: inherit;
     }
 }
 

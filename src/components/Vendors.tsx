@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../style/ExploreProducts.module.css";
 import VendorCard from "./VendorCard";
-import { fetchAllVendors, fetchAllVendors2 } from "../features/products/productSlice";
+import { fetchAllVendors } from "../features/products/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 
@@ -34,7 +34,7 @@ function Vendors({ category }: ExploreProductProps) {
         ? vendors 
         : vendors.filter(vendor => vendor.brand_type === activeCategory);
     
-    console.log(vendors);
+    console.log(filteredVendors);
 
     return (
         <>

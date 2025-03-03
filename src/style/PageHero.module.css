@@ -1,5 +1,5 @@
 .pageHero{
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
 }
 .pageHero::before{
@@ -61,5 +61,22 @@
     background: #0808088f;
 }
 .real-estate-link-1{
-    
+    font-size:2em
+}
+
+@media (max-width: 768px) {
+    .pageHeroHeading{
+        font-size: 8em;
+    }
+
+    .pageHeroDescription{
+        font-family: 'Poppins';
+        font-size: 3.15em;
+        font-weight: 500;
+    }
+
+    .real-estate-link-1{
+        font-size:5em
+    }
+
 }

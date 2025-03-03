@@ -31,14 +31,13 @@
 }
 .categoryBoxHeading{
     position: absolute;
-    left: 24%;
+    left: 0px;
     right: 0px;
-    /* border: 2px solid blue; */
     text-align: center;
     bottom: 10%;
     background-color: #fff;
     padding: 0.5em 1em;
-    /* margin: 0px 28%; */
+    margin: 0px 18%;
     font-family: 'Figtree';
     font-size: 1.15em;
     font-weight: 600;
@@ -81,7 +80,7 @@
     color: #333;
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
-    width: 50%;
+    width: 100%;
     margin-top: 0.5rem;
 }
 
@@ -89,14 +88,27 @@
 @media (max-width: 1024px) {
     .categoryBox {
         max-width: 18rem; /* Smaller cards on tablets */
+    
     }
 }
 
 @media (max-width: 768px) {
     .categoryBox {
         max-width: 100%; /* Full width on small screens */
+        padding: 5rem;
     }
     .categoryImg {
-        max-height: 12vh; /* Reduce image height for smaller screens */
+        max-height: 70vh; /* Reduce image height for smaller screens */
+    }
+
+    .categoryBoxHeading {
+        font-size: 5rem;
+    }
+    .categoriesDisplay{
+    font-size: 5em;
+    
+    }
+    .categoriesDisplayBtn{
+        font-size: 2.9em;
     }
 }

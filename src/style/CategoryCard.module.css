@@ -24,3 +24,22 @@
     font-family: 'Figtree';
     font-size: 1.2em;
 }
+
+@media (max-width: 768px) {
+    .categoryContentHeading{
+        font-size: 5.2em;
+
+    }
+
+    .categoryContentBox{
+        margin: 4em ;
+
+    }
+
+    .categoryCard{
+        margin: 4em ;
+        padding: 4em;
+
+    }
+
+}

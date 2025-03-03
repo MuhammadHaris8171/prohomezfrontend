@@ -16,7 +16,7 @@ const QuickSearchLinks: React.FC<QuickSearchLinksProps> = ({ quickSearches }) =>
           <Link 
             key={index} 
             to={linkPath}
-            style={{ marginRight: '2.2rem',textDecoration: "none",color: "white",backgroundColor: "rgba(195, 199, 196,0.3)" ,fontWeight: "700",fontSize: "1.7rem" }}
+            style={{ marginRight: '2.2rem',textDecoration: "none",color: "white",backgroundColor: "rgba(195, 199, 196,0.3)" ,fontWeight: "700",fontSize: "3.7rem" }}
           >
             {term}
           </Link>

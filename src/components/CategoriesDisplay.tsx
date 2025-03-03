@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import { categories } from './data';
 
 // ✅ Import images from src/assets/images/
-import livingRoomDecorImg from '../assets/images/lotus-design-n-print-WgkA3CSFrjc-unsplash.jpg';
-import paintImg from '../assets/images/abstract-vector-splatter-paint-multi-color-background-design-paint-design-background-concept-illustration-vector-design-abstract-333678862.webp';
-import artImg from '../assets/images/multi-panel-design.jpg';
-import tilesImg from '../assets/images/pexels-megan-forbes-347998-963436.jpg';
-import outdoorLightsImg from '../assets/images/randy-fath-csK5XPO87lI-unsplash.jpg';
+import livingRoomDecorImg from '../assets/images/16882.jpg';
+import paintImg from '../assets/images/red-paint-can-brush.jpg';
+import artImg from '../assets/images/pexels-shonejai-445753-1227497.jpg';
+import tilesImg from '../assets/images/square-interior-floor-tiling-background.jpg';
+import outdoorLightsImg from '../assets/images/pexels-jayoke-1146562.jpg';
 import appliancesImg from '../assets/images/pexels-charlotte-may-5824883.jpg';
 
-import residentialImg from '../assets/images/modern-spacious-room-with-large-panoramic-window.jpg';
-import rentalImg from '../assets/images/360_F_30691356_68PChJ3c7Hw25HZRGXyaJbE3955ubSrY.jpg';
+import residentialImg from '../assets/images/pexels-bohlemedia-1330753.jpg';
+import rentalImg from '../assets/images/pexels-kindelmedia-7578977.jpg';
 import luxuryAptImg from '../assets/images/pexels-joao-gustavo-rezende-15265-68389.jpg';
 
 // ✅ Map images to category names
@@ -26,7 +26,7 @@ const categoryImages: Record<string, string> = {
 
     "Residential": residentialImg,
     "Rental": rentalImg,
-    "Luxury Apartments": luxuryAptImg,
+    "Luxury Appartments": luxuryAptImg,
 };
 
 // ✅ Assign images to categories dynamically
