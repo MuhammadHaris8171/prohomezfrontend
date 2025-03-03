@@ -1,0 +1,42 @@
+.vendorSidebarMainBox{
+    background: #f0f0f0;
+    padding: 2rem 0em;
+    min-height: 100svh;
+    position: sticky;
+    top: 0px;
+}
+.sidebarLogo{
+    width: 35%;
+}
+.sidebarMenuBox{
+    padding: 2.5em 0em;
+}
+.sidebarMenuHeading{
+    font-family: 'Figtree';
+    font-weight: 600;
+    font-size: 1.23em;
+    padding: 0rem 2rem;
+}
+.sidebarMenuList a{
+    color: #000000;
+    font-family: 'Figtree';
+    font-weight: 500;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    text-decoration: none;
+    gap: 10px;
+}
+.sidebarMenuList a:hover{
+    background-color: var(--main-primary-color);
+}
+.sidebarMenuList .activeMenu{
+    background-color: var(--main-primary-color);
+}
+.sidebarMenuList a svg{
+    font-size: inherit;
+}
+.sidebarlistContainer{
+    margin-top: 1em;
+}

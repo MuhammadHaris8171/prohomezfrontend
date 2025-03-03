@@ -1,0 +1,26 @@
+.exploreProductHeading {
+    font-family: 'Figtree';
+    font-weight: 700;
+    font-size: 1.85em;
+    letter-spacing: 0.2px;
+}
+.categoriesDisplayBtn {
+    font-family: 'Figtree';
+    font-weight: 500;
+    font-size: 0.9em;
+    border: 1px solid #0b0b0b;
+    border-radius: 0px;
+    margin-right: 0.7em;
+    transition: all 0.3s;
+}
+
+.categoriesDisplayBtn:hover {
+    color: inherit;
+    background-color: var(--main-primary-color);
+}
+
+.categoryActive {
+    background: var(--main-primary-color);
+    border-color: var(--main-primary-color);
+    font-weight: 600;
+}

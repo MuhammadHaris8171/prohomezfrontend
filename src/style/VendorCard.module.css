@@ -1,0 +1,23 @@
+.cardBox{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+.cardBox:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .24);
+}
+.imgBox{
+    background: #fff;
+    
+}
+.imgBox img{
+    height: 150px;
+    object-fit: contain;
+}
+.cardBoxName{
+    color: #0b0b0b;
+    text-align: center;
+    padding: 1em;
+    background: #fff;
+    font-family: 'Figtree';
+    font-size: 1em;
+    font-weight: 600;
+}

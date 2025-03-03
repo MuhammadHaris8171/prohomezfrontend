@@ -1,0 +1,74 @@
+.vendorRegistrationFormHeading{
+    font-family: 'Figtree';
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.inputBox input {
+    background: transparent;
+    border: none;
+    outline: none;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+
+.inputBox .contactFormSpan {
+    pointer-events: none;
+    position: absolute;
+    font-size: 1em;
+    left: 0px;
+    transform: translateY(0px);
+    transition: all 0.3s;
+}
+
+.inputBox input:user-valid~.contactFormSpan,
+.inputBox input:focus~.contactFormSpan {
+    color: #000;
+    font-size: 0.75em;
+    transform: translateY(-35px);
+}
+
+.inputBox .contactBorderIcon {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: #d9d9d9;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.inputBox input:user-valid~.contactBorderIcon,
+.inputBox input:focus-visible~.contactBorderIcon {
+    height: calc(100% - 28px);
+    border-radius: 8px;
+    z-index: 1;
+}
+.inputBox input[type="number"]::-webkit-outer-spin-button,
+.inputBox input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.contactFormSpan span{
+    font-size: inherit;
+    color: #a50909;
+    margin-left: 3px;
+}
+.selectionBox :where(select, option){
+    cursor: pointer;
+}
+.contactSendBtn {
+    background-color: #29292b;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    font-family: 'Figtree';
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.contactSendBtn:hover {
+    background-color: var(--main-primary-color);
+    color: #29292b;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}

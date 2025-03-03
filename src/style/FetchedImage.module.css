@@ -1,0 +1,42 @@
+.gallerySlider {
+    width: 100svw;
+    max-height: 100svh;
+    /* border: 2px solid red; */
+    object-fit: cover;
+}
+
+.slide {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* max-width: 10svw; */
+    /* border: 2px solid red; */
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the slide without distortion */
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff0000; /* Replace with your desired color, e.g., red */
+}
+.swiper-container {
+    --swiper-navigation-color: #ff0000; /* Your custom color */
+  }
+  /* styles.module.css */
+
+/* For both next and prev arrows */
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: black; /* Red color */
+}
+
+/* Optional: Change color on hover */
+/* :global(.swiper-button-next:hover),
+:global(.swiper-button-prev:hover) {
+  color: #00ff00;
+} */

@@ -1,0 +1,21 @@
+.head{
+    background: #f0f0f0;
+    padding: 1em 0em;
+}
+.headerLogo{
+    width: 100px;
+}
+.unOrderList{
+    gap: 20px;
+}
+.navbarListItem{
+    font-family: 'Figtree', serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.navbarNavLink{
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+}

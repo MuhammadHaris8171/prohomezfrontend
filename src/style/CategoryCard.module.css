@@ -1,0 +1,26 @@
+.categoryCard{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 0px;
+    background: #fff;
+    transition: all 0.3s;
+    border-radius: 5px ;
+    overflow: hidden;
+}
+.categoryCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px;
+}
+.categoryImgBox{
+    width: 27%;
+}
+.categoryImgBox img{
+    width: 100%;
+}
+.categoryContentBox{
+    padding: 0em 1em;
+    width: 73%;
+}
+.categoryContentHeading{
+    width: 75%;
+    color: #0b0b0b;
+    font-family: 'Figtree';
+    font-size: 1.2em;
+}
