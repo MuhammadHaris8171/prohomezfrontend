@@ -28,7 +28,6 @@ interface VendorSidebarMainProps {
   isAdmin: boolean;
 }
 
-
 function Orders({ isAdmin }: VendorSidebarMainProps) {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
@@ -48,13 +47,29 @@ function Orders({ isAdmin }: VendorSidebarMainProps) {
         const response = await axios.get(
           `${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/orders`,
           {
-            headers: {
-              Authorization: `Bearer ${token}`, // Include token in headers
-            },
-            params: { isAdmin },
+            headers: { Authorization: `Bearer ${token}` },
+            params: { isAdmin: isAdmin ? 1 : 0 },
           }
         );
-        setOrders(response.data);
+
+        console.log("API Response:", response.data); // Debug API response
+
+        if (!Array.isArray(response.data)) {
+          throw new Error("Invalid API response");
+        }
+
+        // ✅ Parse client_details & cart_items
+        const parsedOrders = response.data.map((order: any) => ({
+          ...order,
+          client_details: typeof order.client_details === "string"
+            ? JSON.parse(order.client_details)
+            : order.client_details,
+          cart_items: typeof order.cart_items === "string"
+            ? JSON.parse(order.cart_items)
+            : order.cart_items,
+        }));
+
+        setOrders(parsedOrders);
       } catch (error) {
         if (axios.isAxiosError(error)) {
           setError(error.response?.data.message || "Failed to fetch orders");
@@ -67,13 +82,13 @@ function Orders({ isAdmin }: VendorSidebarMainProps) {
     };
 
     fetchOrders();
-  }, []);
+  }, [isAdmin]);
 
   if (loading) return <div>Loading orders...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (
-    <>
+    <div className="min-h-[100vh]">
       <h2 className={`mb-4 ${styles.ordersHeading}`}>Your Orders</h2>
       <div className={styles.ordersList}>
         {orders.map((order) => (
@@ -82,17 +97,17 @@ function Orders({ isAdmin }: VendorSidebarMainProps) {
             <p className={styles.orderDate}>Date: {new Date(order.order_date).toLocaleDateString()}</p>
             <h5 className={`${styles.orderDetailHeading}`}>Customer Details:</h5>
             <p>
-              <strong>Name: </strong>{JSON.parse(`${order.client_details}`).name}
+              <strong>Name: </strong>{order.client_details.name}
               <br />
-              <strong>Email: </strong>{JSON.parse(`${order.client_details}`).email}
+              <strong>Email: </strong>{order.client_details.email}
               <br />
-              <strong>Number: </strong>{JSON.parse(`${order.client_details}`).phone}
+              <strong>Number: </strong>{order.client_details.phone}
               <br />
-              <strong>Address: </strong>{JSON.parse(`${order.client_details}`).address}, {JSON.parse(`${order.client_details}`).city}, {JSON.parse(`${order.client_details}`).state}, {JSON.parse(`${order.client_details}`).country} - {JSON.parse(`${order.client_details}`).postalCode}
+              <strong>Address: </strong>{order.client_details.address}, {order.client_details.city}, {order.client_details.state}, {order.client_details.country} - {order.client_details.postalCode}
             </p>
             <h5 className={`${styles.orderDetailHeading}`}>Order Items:</h5>
             <ul>
-              {JSON.parse(`${order.cart_items}`).map((item:any, index:number) => (
+              {order.cart_items.map((item, index) => (
                 <li key={index}>
                   {item.productName} (x{item.quantity}) - $
                   {((item.discountedPrice || item.productPrice) * item.quantity).toFixed(2)}
@@ -103,7 +118,7 @@ function Orders({ isAdmin }: VendorSidebarMainProps) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

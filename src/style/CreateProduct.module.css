@@ -118,3 +118,37 @@
     font-weight: 400;
     padding-top: 5px;
 }
+@media all and (max-width:600px) {
+    .insertMediaLabel{
+        /* border: 3px solid blue; */
+        margin-top: 10vh;
+        font-size: 4rem;
+    }
+    .secondaryHeading{
+        /* font-family: 'Figtree'; */
+        font-weight: 600;
+        font-size: 5.1rem;
+    }
+    .importantFilling{
+        font-size: 4rem;
+    }
+    .contentGatheringBox ::placeholder{
+        font-size: 4rem;
+    }
+    .contentGatheringBox input{
+        /* border: 2px solid blue; */
+        height: 10vh;
+    }
+    
+    .formchecklabel {
+        font-size: 4rem;
+    }
+    .formcheckinput{
+        /* border: 2px solid blue; */
+        width: 5rem;
+        height: 5rem !important;
+    }
+    .createProductBtn{
+        font-size: 4rem;
+    }
+}

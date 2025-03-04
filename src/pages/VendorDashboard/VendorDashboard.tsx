@@ -38,15 +38,15 @@ function VendorDashboard() {
   }
 
   return (
-      <div className="container-fluid">
+      <div className="container-fluid" id='VendorSidebarMain'>
         <div className="row">
           {/* Sidebar: Hidden on small and medium screens */}
-          <div className="col-lg-2 col-md-0 col-sm-0 px-0">
+          <div className="col-lg-2 col-md-1 col-sm-1 px-0">
             <VendorSidebarMain isAdmin={isAdmin} />
           </div>
     
           {/* Main content: Full width on small/medium screens, 10 columns on large screens */}
-          <div className="col-lg-10 col-md-12 col-sm-12">
+          <div className="col-lg-10 col-md-11 col-sm-11">
             <div style={{ flex: 1, padding: '20px' }}>
               <Routes>
                 <Route path="overview" element={<VendorDashboardProducts isAdmin={isAdmin} />} />

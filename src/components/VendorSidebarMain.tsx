@@ -15,7 +15,7 @@ interface VendorSidebarMainProps {
 
 function VendorSidebarMain({ isAdmin }: VendorSidebarMainProps) {
   return (
-    <>
+    <div className="h-[1vh]">
     <div className={`${styles.vendorSidebarMainBox}`}>
         <div className={`${styles.sidebarLogoBox} d-flex justify-content-center`}>
             <img src={logo} alt="Pro Homez" className={`${styles.sidebarLogo}`} />
@@ -34,7 +34,7 @@ function VendorSidebarMain({ isAdmin }: VendorSidebarMainProps) {
             </ul>
         </div>
     </div>
-    </>
+    </div>
   )
 }
 

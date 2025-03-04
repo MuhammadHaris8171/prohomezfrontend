@@ -1,12 +1,49 @@
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6"
 import styles from "./Footer.module.css"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import SearchBox from "../SearchBox"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa"
+import { useState, useEffect } from "react"
 
 function Footer() {
+  const location = useLocation();
+  const [isOverlapping, setIsOverlapping] = useState(false);
+
+  useEffect(() => {
+    const checkOverlap = () => {
+      const footer = document.querySelector("footer"); // Ensure footer is found
+      const vendorSideMain = document.getElementById("VendorSidebarMain");
+  
+      if (!footer || !vendorSideMain) {
+        console.log("🚨 Footer or VendorSideMain not found!");
+        return;
+      }
+  
+      const footerRect = footer.getBoundingClientRect();
+      const vendorRect = vendorSideMain.getBoundingClientRect();
+  
+      console.log("📌 Checking Overlap:");
+      console.log("Footer Position:", footerRect);
+      console.log("VendorSideMain Position:", vendorRect);
+  
+      if (vendorRect.bottom >= footerRect.top) { 
+        console.log("⚠️ Overlapping detected or touching!");
+        setIsOverlapping(true);
+      } else {
+        setIsOverlapping(false);
+      }
+    };
+  
+    // Run immediately and on resize
+    setTimeout(checkOverlap, 700);
+    window.addEventListener("resize", checkOverlap);
+  
+    return () => window.removeEventListener("resize", checkOverlap);
+  }, [location.pathname]);
+  
+
   return (
-    <>
+    <div style={{ marginTop: isOverlapping ? "85vh" : "0" }} id="footer">
         <footer className={`${styles.footer}`}>
             <div className="container py-5">
                 <div className="row">
@@ -52,7 +89,7 @@ function Footer() {
               </div>
             </div>
         </footer>
-    </>
+    </div>
   )
 }
 

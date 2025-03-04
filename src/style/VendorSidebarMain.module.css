@@ -2,6 +2,7 @@
     background: #f0f0f0;
     padding: 2rem 0em;
     min-height: 100svh;
+    z-index: 1;
     position: sticky;
     top: 0px;
 }
@@ -10,6 +11,7 @@
 }
 .sidebarMenuBox{
     padding: 2.5em 0em;
+    
 }
 .sidebarMenuHeading{
     font-family: 'Figtree';
@@ -40,7 +42,7 @@
 .sidebarlistContainer{
     margin-top: 1em;
 }
-@media all and (max-width:500px) {
+@media all and (max-width:600px) {
     .vendorSidebarMainBox a{
         font-size: 3rem;
         padding: 0rem 0em;
@@ -54,8 +56,8 @@
         width: 100vw;
         display: flex;
         flex-direction: row;
-        min-height: 7vh;
-        max-height: 10vh;
+        min-height: 15vh;
+        max-height: 15vh;
         padding: 0rem 0em;
         margin-bottom: 100vh;
     }
@@ -78,6 +80,7 @@
     }
     .sidebarMenuList a span {
         display: none; /* Hide text */
+
     }
     .sidebarLogoBox{
         width: 40rem;
