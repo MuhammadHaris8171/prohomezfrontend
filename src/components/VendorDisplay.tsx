@@ -3,6 +3,8 @@ import styles from "../style/VendorDisplay.module.css";
 import vendorLogo from "../assets/images/vendor-temporary.webp";
 import VendorCard from "./VendorCard";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 interface Vendor {
     name: string;
@@ -11,12 +13,12 @@ interface Vendor {
 }
 
 function VendorDisplay() {
-    const [vendors, setVendors] = useState<Vendor[]>([]);
+    const { vendors } = useSelector((state: RootState) => state.products);
 
     useEffect(() => {
         const fetchVendors = async () => {
             try {
-                const response = await fetch("http://localhost:5000/fetchAllVendorsPublic");
+                const response = await fetch("http://localhost:5000/all-vendors2");
                 if (!response.ok) {
                     throw new Error(`Server error: ${response.status}`);
                 }

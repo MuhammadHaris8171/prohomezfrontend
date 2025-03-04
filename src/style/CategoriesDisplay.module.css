@@ -10,7 +10,6 @@
     font-size: 0.9em;
     border: 1px solid #0b0b0b;
     border-radius: 0px;
-    margin-right: 0.7em;
     transition: all 0.3s;
 }
 .categoriesDisplayBtn:hover{
@@ -31,13 +30,12 @@
 }
 .categoryBoxHeading{
     position: absolute;
-    left: 0px;
-    right: 0px;
+ 
     text-align: center;
     bottom: 10%;
     background-color: #fff;
-    padding: 0.5em 1em;
-    margin: 0px 18%;
+    padding: 1em;
+    margin: 10%;
     font-family: 'Figtree';
     font-size: 1.15em;
     font-weight: 600;
@@ -68,8 +66,8 @@
 
 .categoryImg {
     width: 100%;
-    height: 45vh; /* Responsive height */
-    object-fit: cover; /* Ensures images fit properly */
+    height: 45vh;
+    object-fit: cover; 
     border-radius: 0.5rem;
 }
 

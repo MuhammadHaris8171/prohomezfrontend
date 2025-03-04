@@ -1,42 +1,102 @@
-.gallerySlider {
-    width: 100svw;
-    max-height: 100svh;
-    /* border: 2px solid red; */
-    object-fit: cover;
+/* Main Container */
+.galleryContainer {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
-.slide {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* max-width: 10svw; */
-    /* border: 2px solid red; */
-    height: 100%;
-    object-fit: cover;
+/* Slider Styles */
+.gallerySlider {
+  width: 100%;
+  height: 60vh;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slideImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the slide without distortion */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
 }
-.swiper-button-next,
-.swiper-button-prev {
-  color: #ff0000; /* Replace with your desired color, e.g., red */
+
+/* Thumbnail Styles */
+.thumbnailContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
-.swiper-container {
-    --swiper-navigation-color: #ff0000; /* Your custom color */
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.activeThumbnail {
+  border: 2px solid blue;
+  filter: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .gallerySlider {
+      height: 50vh;
   }
-  /* styles.module.css */
 
-/* For both next and prev arrows */
-:global(.swiper-button-next),
-:global(.swiper-button-prev) {
-  color: black; /* Red color */
+  .thumbnail {
+      width: 40px;
+      height: 40px;
+  }
 }
 
-/* Optional: Change color on hover */
-/* :global(.swiper-button-next:hover),
-:global(.swiper-button-prev:hover) {
-  color: #00ff00;
-} */
+@media (max-width: 480px) {
+  .galleryContainer {
+      max-width: 90%;
+      align-items: center;  /* Ensure centering */
+      text-align: center; /* Ensure images align properly */
+  }
+
+  .gallerySlider {
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .slideImg {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+  }
+
+  .thumbnailContainer {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: center;
+      padding: 10px;
+      gap: 0.5rem;
+  }
+
+  .thumbnail {
+      width: 35px;
+      height: 35px;
+  }
+}

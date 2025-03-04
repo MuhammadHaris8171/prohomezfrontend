@@ -17,3 +17,26 @@
     width: 55%;
     margin: auto;
 }
+
+@media (max-width: 768px) {
+    .LoginMainBox {
+        padding: 5em 0em;
+    }
+    
+    .LoginHeading {
+        font-family: 'Figtree';
+        font-weight: 700;
+        font-size: 6.3em;
+        margin-bottom: 0.7em;
+    }
+    
+    .loginFormBox {
+        padding: 4em 4em;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        background: #fff;
+        width: 85%;
+        margin: auto;
+    }
+    
+}

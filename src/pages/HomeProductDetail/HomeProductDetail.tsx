@@ -169,31 +169,36 @@ function HomeProductDetail() {
       </section>
       
       {suggestedProducts.length > 0 && (
-          <section className="container my-5">
-            <h3 className="mb-4 fw-bolder fs-10">Suggested Products</h3>
-            <div className="row">
-              {suggestedProducts.map((suggestedProduct) => (
-                <div key={suggestedProduct.id} className="col-md-4 mb-4">
-                  <Link to={`/products/Real Estate/${suggestedProduct.productName.replace(/\s+/g, "-")}`} className="text-decoration-none">
-                    <div className="card">
-                      <img
-                        src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${suggestedProduct.featureImage}`}
-                        alt={suggestedProduct.productName}
-                        className="card-img-top"
-                        style={{ height: "200px", objectFit: "cover" }}
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title">{suggestedProduct.productName}</h5>
-                        <p className="card-text">Price: ${suggestedProduct.productPrice}</p>
-                        <p className="text-muted">Category: {suggestedProduct.selectedCategory}</p>
-                      </div>
-                    </div>
-                  </Link>
+    <section className="container my-5">
+        <h1 className="md:text-6xl text-3xl">Suggested Products</h1>
+        <div className="row">
+            {suggestedProducts.map((suggestedProduct) => (
+                <div key={suggestedProduct.id} className="col-12 col-sm-6 col-md-4 mb-4">
+                    <Link
+                        to={`/products/Real Estate/${suggestedProduct.productName.replace(/\s+/g, "-")}`}
+                        className="text-decoration-none"
+                    >
+                        <div className="card shadow-sm">
+                            <img
+                                src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${suggestedProduct.featureImage}`}
+                                alt={suggestedProduct.productName}
+                                className="card-img-top"
+                                style={{ height: "220px", objectFit: "cover" }}
+                            />
+                            <div className="card-body">
+                                <h1 className="text-6xl">{suggestedProduct.productName}</h1>
+                                <h2 className="md:text-2xl text-6xl">Price: <h2 className='md:text-2xl text-6xl'>${suggestedProduct.productPrice}</h2></h2>
+                                <h3 className="md:text-2xl text-6xl">Category: {suggestedProduct.selectedCategory}</h3>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
+            ))}
+        </div>
+    </section>
+)}
+
+      
     </>
   );
 }

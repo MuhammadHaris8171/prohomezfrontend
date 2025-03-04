@@ -25,7 +25,7 @@ function FetchedImage({ featureImage, images = [] }: GalleryBoxProps) {
     };
 
     return (
-        <div className="position-relative" style={{ width: '44svw',height: '80svh', marginBottom: "5%", marginTop: "0.5%" }}>
+        <div className={`${styles.galleryContainer}`}>
             {/* Image Slider */}
             <Swiper
                 ref={swiperRef}
@@ -33,51 +33,34 @@ function FetchedImage({ featureImage, images = [] }: GalleryBoxProps) {
                 spaceBetween={0}
                 slidesPerView={1}
                 navigation
-                // pagination={{ clickable: true }}
                 loop={true}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
                 className={`${styles.gallerySlider}`}
-                style={{ width: '100%', height: '100%' }}
             >
                 {images.map((item, index) => (
                     <SwiperSlide key={index} className={`${styles.slide}`}>
                         <img 
                             src={`${imageBaseUrl}/images/${item}`} 
                             alt="ProHomez" 
-                            className={`${styles.slideImg}`} 
-                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            className={`${styles.slideImg}`}
                         />
                     </SwiperSlide>
                 ))}
             </Swiper>
 
-            {/* Thumbnails (Positioned Absolute Below) */}
-            <div 
-                className="d-flex justify-content-center position-absolute start-50 translate-middle-x"
-                style={{
-                    bottom: "-20%",
-                    width: "100%",
-                    gap: "1.5rem",
-                }}
-            >
+            {/* Thumbnails */}
+            <div className={`${styles.thumbnailContainer}`}>
                 {images.map((item, index) => (
                     <div 
                         key={index} 
-                        className={`${styles.thumbnail}`}
-                        style={{
-                            width: "50px", height: "50px", cursor: "pointer",
-                            border: selectedIndex === index ? "2px solid blue" : "none",
-                            filter: selectedIndex === index ? "none" : "blur(0.5px)",
-                            transition: "filter 0.3s ease-in-out"
-                        }}
+                        className={`${styles.thumbnail} ${selectedIndex === index ? styles.activeThumbnail : ''}`}
                         onClick={() => handleThumbnailClick(index)}
                     >
                         <img 
                             src={`${imageBaseUrl}/images/${item}`} 
                             alt="ProHomez" 
-                            className="w-100 h-100" 
-                            style={{ objectFit: "cover", borderRadius: "5px" }}
+                            className={`${styles.thumbnailImg}`}
                         />
                     </div>
                 ))}

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 function MainHeroDivider() {
   return (
     <section className={`${styles.mainHeroDivider}`}>
-      <div className="container">
-        <div className="row g-4">
+      <div>
+        <div className="row">
           {/* Left Section */}
           <div className="col-lg-6 col-md-12">
             <div className={`${styles.heroBoxContainer} ${styles.realestateBackground} position-relative`}>

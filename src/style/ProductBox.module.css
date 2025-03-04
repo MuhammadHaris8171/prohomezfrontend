@@ -65,3 +65,21 @@
     transform: translateY(-50%);
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+.productName{
+    font-size: 5em;
+    
+    }
+    .productPrice{
+        font-size: 5em;
+
+    
+    }
+    .productBox{
+       
+        padding: 2.8em 2.7em;
+   
+    }
+
+}

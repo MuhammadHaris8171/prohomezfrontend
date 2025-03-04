@@ -72,3 +72,55 @@
     color: #29292b;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
+
+@media (max-width: 768px) {
+    .inputBox .contactFormSpan {
+        pointer-events: none;
+        position: absolute;
+        font-size: 1em;
+        left: 0px;
+        transform: translateY(0px);
+        transition: all 0.3s;
+    }
+    
+    .inputBox input:user-valid~.contactFormSpan,
+    .inputBox input:focus~.contactFormSpan {
+        color: #000;
+        font-size: 1.75em;
+        transform: translateY(-5px);
+    }
+    .vendorRegistrationFormHeading {
+        font-size: 3em; /* Adjusted for better readability */
+    }
+
+    .inputBox {
+        margin-bottom: 5px; /* Adds more spacing between fields */
+    }
+
+    .inputBox input {
+        padding: 5px 5px; /* Increases input padding */
+        font-size: 2.2em; /* Makes input text more readable */
+    }
+
+    .inputBox .contactFormSpan {
+        font-size: 2.5em; /* Keeps label size consistent */
+    }
+
+    .inputBox .contactBorderIcon {
+        height: 1px; /* Makes the underline more visible */
+    }
+
+    .selectionBox {
+        margin-bottom: 1px; /* Adds spacing for dropdowns */
+    }
+
+    .contactSendBtn {
+        padding: 5px; /* Increases button padding */
+        font-size: 4.2em; /* Increases button text size */
+        margin: auto;
+        display: flex;
+        width: 100px;
+        justify-content: center;
+
+    }
+}

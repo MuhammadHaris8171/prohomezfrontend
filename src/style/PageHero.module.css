@@ -46,12 +46,10 @@
 .inputQuickSearchBox {
     color: #fff;
     font-family: 'Figtree';
-    font-weight: 600;
     font-size: 1.25em;
     border: 1px solid #fff;
     padding: 0.3em 0.6em;
     border-radius: 8px;
-    background: #08080833;
     margin-right: 14px;
     cursor: pointer;
     transition: all 0.3s;
@@ -85,5 +83,7 @@
     .real-estate-link-1{
         font-size:5em
     }
+
+
 
 }

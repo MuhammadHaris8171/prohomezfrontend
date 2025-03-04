@@ -36,9 +36,9 @@ function ExploreProducts({ category }: ExploreProductProps) {
             dispatch(fetchProducts());
         }
     }, [category, dispatch, status]);
-    useEffect(() => {
-        console.log("Fetched Products:", products);
-    }, [products]);
+    // useEffect(() => {
+    //     console.log("Fetched Products:", products);
+    // }, [products]);
     
 
     // Filter products based on active category
