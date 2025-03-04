@@ -10,11 +10,9 @@
     text-decoration: none;
     color: white;
     background-color: rgba(196, 153, 81, 1);
-    font-weight: 100;
     font-size: 1.5rem;
     padding: 0.8rem 1.2rem;
-    font-family: fantasy;
-    border-radius: 5px;
+    font-family: 'fantasy';
     transition: background-color 0.3s ease-in-out;
   }
   

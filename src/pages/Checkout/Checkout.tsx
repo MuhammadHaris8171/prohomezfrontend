@@ -96,7 +96,7 @@ function Checkout() {
   
 
   return (
-    <div className={`container py-5`}>
+    <div className={`container py-5 px-5`}>
       <h2 className={`text-center mb-4 ${styles.checkoutPrimaryHeading}`}>Complete Your Purchase</h2>
       <div className="row">
         {/* Client Details Form */}

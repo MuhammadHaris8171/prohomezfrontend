@@ -3,8 +3,10 @@ import styles from "../style/VendorDisplay.module.css";
 import vendorLogo from "../assets/images/vendor-temporary.webp";
 import VendorCard from "./VendorCard";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { fetchAllVendors } from "../features/products/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../store/store";
+
 
 interface Vendor {
     name: string;
@@ -13,34 +15,16 @@ interface Vendor {
 }
 
 function VendorDisplay() {
+        const dispatch = useDispatch<AppDispatch>();
+
     const { vendors } = useSelector((state: RootState) => state.products);
 
-    useEffect(() => {
-        const fetchVendors = async () => {
-            try {
-                const response = await fetch("http://localhost:5000/all-vendors2");
-                if (!response.ok) {
-                    throw new Error(`Server error: ${response.status}`);
-                }
-                const data = await response.json();
+      useEffect(() => {
+           dispatch(fetchAllVendors());
+       }, [dispatch]);
 
-                // Map fetched data to Vendor structure with default image
-                const formattedVendors = data.map((vendor: { store_name: string }) => ({
-                    name: vendor.store_name,
-                    featureImage: vendorLogo, // Default image
-                    src: "#",
-                }));
+       return (
 
-                setVendors(formattedVendors);
-            } catch (error) {
-                console.error("Error fetching vendor details:", error);
-            }
-        };
-
-        fetchVendors();
-    }, []);
-
-    return (
         <div className="container">
             <div className="row">
                 <div className="col-md-12">

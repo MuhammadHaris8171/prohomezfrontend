@@ -70,7 +70,7 @@ function AddToCart() {
 
   return (
     <div className="container py-5">
-      <h2 className="text-center mb-4">Your Cart</h2>
+      <h1 className="text-center mb-4 text-8xl md:text-2xl">Your Cart</h1>
       <div className="row">
         {cartItems.map((item) => (
           <div className="col-md-12 mb-3" key={item.id}>
@@ -92,7 +92,7 @@ function AddToCart() {
                   >
                     -
                   </button>
-                  <span className='fw-medium'>{item.quantity}</span>
+                  <h1 className='text-6xl md:text-3xl'>{item.quantity}</h1>
                   <button
                     className={`btn btn-sm btn-outline-secondary ${styles.incrementDecrementButton}`}
                     onClick={() =>
@@ -120,7 +120,7 @@ function AddToCart() {
         ))}
       </div>
       <div className="text-end">
-        <h4>Total: ${calculateTotal()}</h4>
+        <h1 className='text-6xl md:text-3xl'>Total: ${calculateTotal()}</h1>
         <Link to="/checkout"><button className={`btn ${styles.checkoutBtn}`}>Proceed to Checkout</button></Link>
       </div>
     </div>
