@@ -96,19 +96,19 @@ function Orders({ isAdmin }: VendorSidebarMainProps) {
             <h4 className={styles.orderId}>Order ID: {order.order_id}</h4>
             <p className={styles.orderDate}>Date: {new Date(order.order_date).toLocaleDateString()}</p>
             <h5 className={`${styles.orderDetailHeading}`}>Customer Details:</h5>
-            <p>
-              <strong>Name: </strong>{order.client_details.name}
+            <p className={styles.orderdetailPara}>
+              <strong className={styles.orderdetailstrong}>Name: </strong>{order.client_details.name}
               <br />
-              <strong>Email: </strong>{order.client_details.email}
+              <strong className={styles.orderdetailstrong}>Email: </strong>{order.client_details.email}
               <br />
-              <strong>Number: </strong>{order.client_details.phone}
+              <strong className={styles.orderdetailstrong}>Number: </strong>{order.client_details.phone}
               <br />
-              <strong>Address: </strong>{order.client_details.address}, {order.client_details.city}, {order.client_details.state}, {order.client_details.country} - {order.client_details.postalCode}
+              <strong className={styles.orderdetailstrong}>Address: </strong>{order.client_details.address}, {order.client_details.city}, {order.client_details.state}, {order.client_details.country} - {order.client_details.postalCode}
             </p>
             <h5 className={`${styles.orderDetailHeading}`}>Order Items:</h5>
             <ul>
               {order.cart_items.map((item, index) => (
-                <li key={index}>
+                <li key={index} className={styles.orderdetailli}>
                   {item.productName} (x{item.quantity}) - $
                   {((item.discountedPrice || item.productPrice) * item.quantity).toFixed(2)}
                 </li>

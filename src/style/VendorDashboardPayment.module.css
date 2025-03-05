@@ -1,0 +1,9 @@
+@media all and (max-width:600px) {
+.dashboardpayment1{
+margin-top: 14vh;
+}
+.dashboardpayment1 h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+}

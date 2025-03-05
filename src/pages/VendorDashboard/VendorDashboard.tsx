@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import VendorSidebarMain from '../../components/VendorSidebarMain';
 import VendorDashboardProducts from '../../components/VendorDashboardProducts';
+import VendorDashboardPayment from '../../components/VendorDashboardPayment';
 import CreateProduct from '../../components/CreateProduct';
 import DisplayMedia from '../../components/DisplayMedia';
 import EditProduct from '../../components/EditProduct';
@@ -54,7 +55,8 @@ function VendorDashboard() {
                 <Route path="products" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
                 <Route path="vendors" element={<VendorDashboardVendors />} />
                 <Route path="orders" element={<Orders isAdmin={isAdmin} />} />
-                <Route path="payment" element={<VendorDashboardProducts isAdmin={isAdmin} />} />
+                {/* <Route path="payment" element={<VendorDashboardProducts isAdmin={isAdmin} />} /> */}
+                <Route path="payment" element={<VendorDashboardPayment isAdmin={isAdmin} />} />
                 <Route path="profile" element={<VendorProfile />} />
                 {!isAdmin && <Route path="products/create" element={<CreateProduct />} />}
                 <Route path="products/edit/:slug" element={<EditProduct />} />

@@ -42,3 +42,34 @@
     text-align: center;
     margin-top: 1rem;
   }  
+  @media all and (max-width:600px) {
+    .ordersHeading {
+      margin-top: 14vh;
+      font-size: 5.4em;
+      font-weight: 600;
+    }
+    .ordersList p,li,strong{
+      /* font-size: 4rem; */
+    }
+    .orderId{
+      font-size: 4rem;
+    }
+    .orderDate{
+      font-size: 4rem;
+    }
+    .order{
+      font-size: 4rem;
+    }
+    .orderDetailHeading{
+      font-size: 4rem;
+    }
+    .orderdetailPara{
+      font-size: 4rem;
+    }
+    .orderdetailstrong{
+      font-size: 4rem;
+    }
+    .orderdetailli{
+      font-size: 4rem;
+    }
+  }
