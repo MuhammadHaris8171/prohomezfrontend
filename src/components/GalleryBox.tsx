@@ -20,9 +20,13 @@ function GalleryBox({featureImage, images} : GalleryBoxProps) {
                         <div className="col-md-6">
                             <div className="row row-gap-4">
                                 {images && images.map((item, index) => (
-                                    <div className="col-6"  key={index}>
+                                    <div className="col-12 col-md-6" key={index}> {/* Full width on mobile, half on desktop */}
                                         <div className={`${styles.galleryImgBox}`}>
-                                            <img src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${item}`} alt="ProHomez" className={`w-100 ${styles.productImg}`} />
+                                            <img 
+                                                src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${item}`} 
+                                                alt="ProHomez" 
+                                                className={`w-100 ${styles.productImg}`} 
+                                            />
                                         </div>
                                     </div>
                                 ))}
