@@ -14,7 +14,7 @@ interface ProductGridProps {
   mainCategory: string;
 }
 
-const SearchBox:React.FC<ProductGridProps> = ({ mainCategory }) => {
+const SearchBox:React.FC<ProductGridProps> = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [showResults, setShowResults] = useState(false);

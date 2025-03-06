@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { BsSendFill } from 'react-icons/bs';
 import styles from '../style/ContactForm.module.css';
 import Swal from 'sweetalert2'
 

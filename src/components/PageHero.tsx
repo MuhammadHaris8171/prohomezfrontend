@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SearchBox from './SearchBox';
 import defaultBgImg from '../assets/images/6961783.jpg';
 import styles from '../style/PageHero.module.css';

@@ -10,7 +10,6 @@ interface RealEstateListingProps {
 }
 
 function RealEstateListingAgentSidebar({vendorDetail}: RealEstateListingProps) {
-    const cleanedPhoneNumber = vendorDetail.store_phone && vendorDetail.store_phone.replace(/[^\d+]/g, '');
     const {singleProduct}=useSelector((state:RootState)=>state.products)
     const navigate=useNavigate()
 
@@ -21,16 +20,16 @@ function RealEstateListingAgentSidebar({vendorDetail}: RealEstateListingProps) {
             <h5  className={`${styles.listingAgentHeading}`}>Listing Agent</h5>
             <div className={`${styles.listingAgentDetailBox} d-flex my-4`}>
                 <div className={`${styles.imgBox}`}>
-                    <a className='flex justify-center' href={`/vendor/profile/${singleProduct.storeId}`}>
+                    <a className='flex justify-center' href={`/vendor/profile/${singleProduct?.storeId}`}>
                     <img src={vendorDetail.image || vendorLogo} alt="ProHomez" />
                     </a>
                 </div>
                 <div className={`${styles.listingAgentDetail}`}>
                     <a className='no-underline text-black' href={`/vendor/profile/${singleProduct.storeId}`}>
 
-                    <h4 onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorName}`}>{vendorDetail.store_name}</h4>
-                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.email}</p>
-                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.store_phone}</p>
+                    <h4 onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorName}`}>{vendorDetail.store_name}</h4>
+                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.email}</p>
+                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.store_phone}</p>
                     </a>
                 </div>
             </div>

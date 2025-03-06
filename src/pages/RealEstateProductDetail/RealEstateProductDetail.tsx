@@ -17,14 +17,14 @@ import FetchedImage from '../../components/FetchedImage';
 const selectProductState = (state: RootState) => state.products;
 
 const selectSingleProduct = createSelector(selectProductState, (products) => products.singleProduct);
-const selectSuggestedProducts = createSelector(selectProductState, (products) => products.suggestedProducts);
+// const selectSuggestedProducts = createSelector(selectProductState, (products) => products.suggestedProducts);
 
 function RealEstateProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const dispatch = useDispatch<AppDispatch>();
 
   const product = useSelector(selectSingleProduct);
-  const suggestedProducts = useSelector(selectSuggestedProducts);
+  // const suggestedProducts = useSelector(selectSuggestedProducts);
   const productStatus = useSelector((state: RootState) => state.products.status);
 
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
@@ -37,7 +37,7 @@ function RealEstateProductDetail() {
 
   useEffect(() => {
     if (product && product.category) {
-      dispatch(fetchProductsByCategory(product.category));
+      dispatch(fetchProductsByCategory(product?.category));
     }
   }, [product, dispatch]);
 
@@ -46,14 +46,14 @@ function RealEstateProductDetail() {
   }
 
   // Parse JSON safely
-  const realEstateDetails = product.realEstateDetails ? JSON.parse(product.realEstateDetails) : {};
+  const realEstateDetails = product.realEstateDetails ? JSON.parse(product?.realEstateDetails) : {};
   const selectedImages = Array.isArray(product.selectedImages)
     ? product.selectedImages
     : product.selectedImages
     ? JSON.parse(product.selectedImages)
     : [];
-  const vendorDetails = product.vendorDetails ? JSON.parse(product.vendorDetails) : {};
-  const amenities = product.amenities ? JSON.parse(product.amenities) : [];
+  const vendorDetails = product.vendorDetails ? JSON.parse(product?.vendorDetails) : {};
+  const amenities = product.amenities ? JSON.parse(product?.amenities) : [];
 
   // Description truncation
   const truncateDescription = (description: string | null, maxWords: number) => {
@@ -150,7 +150,7 @@ function RealEstateProductDetail() {
       </section>
 
       {/* Suggested Products Section */}
-      <section className={`${styles.suggestedProducts} pt-5 pb-4`}>
+      {/* <section className={`${styles.suggestedProducts} pt-5 pb-4`}>
         <div className="container">
           <h3 className="mb-4">You May Also Like</h3>
           <div className="row">
@@ -169,7 +169,7 @@ function RealEstateProductDetail() {
             )}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -234,7 +234,7 @@ export const updateProduct = createAsyncThunk<Product, any, { rejectValue: strin
 );
 export const fetchVendorProductsByStoreId = createAsyncThunk<Product[], string, { rejectValue: string }>(
   'products/fetchVendorProductsByStoreId',
-  async ({store_id}, { rejectWithValue }) => {
+  async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${API_BASE}/vendor-products/${store_id}`);
       return response.data;
@@ -258,7 +258,7 @@ export const fetchProductsByCategory = createAsyncThunk(
   }
 );
 
-export const fetchVendorDetails2 = createAsyncThunk("vendors/fetchDetails2", async ({ store_id }, { rejectWithValue }) => {
+export const fetchVendorDetails2 = createAsyncThunk("vendors/fetchDetails2", async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
   try {
       const response = await axios.get(`${API_BASE}/${store_id}`); // Ensure backend supports this route
       return response.data;

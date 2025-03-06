@@ -56,7 +56,7 @@ function VendorDashboard() {
                 <Route path="vendors" element={<VendorDashboardVendors />} />
                 <Route path="orders" element={<Orders isAdmin={isAdmin} />} />
                 {/* <Route path="payment" element={<VendorDashboardProducts isAdmin={isAdmin} />} /> */}
-                <Route path="payment" element={<VendorDashboardPayment isAdmin={isAdmin} />} />
+                <Route path="payment" element={<VendorDashboardPayment/>} />
                 <Route path="profile" element={<VendorProfile />} />
                 {!isAdmin && <Route path="products/create" element={<CreateProduct />} />}
                 <Route path="products/edit/:slug" element={<EditProduct />} />

@@ -4,7 +4,6 @@ import { AppDispatch, RootState } from "../store/store";
 import { fetchProducts } from "../features/products/productSlice";
 import styles from "../style/ExploreProducts.module.css";
 import ProductBox from "./ProductBox";
-import { useLocation } from "react-router-dom";
 
 interface ExploreProductProps {
     category: string;
@@ -12,7 +11,6 @@ interface ExploreProductProps {
 
 function ExploreProducts({ category }: ExploreProductProps) {
     const dispatch = useDispatch<AppDispatch>();
-    const location = useLocation();
 
     // Fetch products from Redux store
     const products = useSelector((state: RootState) => state.products.items);
@@ -60,7 +58,7 @@ function ExploreProducts({ category }: ExploreProductProps) {
                 {uniqueCategories.length > 1 && (
                     <div className="col-md-12 mt-4">
                         <div className="d-flex justify-content-center">
-                            {uniqueCategories.map((cat, index) => (
+                            {uniqueCategories?.map((cat, index) => (
                                 <button
                                     key={index}
                                     className={`${styles.categoriesDisplayBtn} btn ${

@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
 interface VendorProfileProps {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
+  id?: number;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
   image?: string;
   about?: string;
   description?: string;
@@ -27,10 +27,9 @@ interface VendorProfileForm {
 
 const VendorProfile: React.FC = () => {
   const [vendor, setVendor] = useState<VendorProfileProps | null>(null);
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<VendorProfileForm>();
+  const { register, handleSubmit, setValue } = useForm<VendorProfileForm>();
   const [updateStatus, setUpdateStatus] = useState<string>("");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-  const { vendorDetails } = useSelector((state: RootState) => state.products);
 
   const token = localStorage.getItem("token");
 

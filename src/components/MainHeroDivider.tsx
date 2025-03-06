@@ -1,5 +1,4 @@
 import styles from '../style/MainHeroDivider.module.css';
-import realEstateIllustration from '../assets/images/realestate-icon.webp';
 import homeIllustration from '../assets/images/pexels-amar-saleem-15661-70441.jpg';
 import anotherIllustration from '../assets/images/still-life-various-cleaning-products.jpg';
 import { Link } from 'react-router-dom';
