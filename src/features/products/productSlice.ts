@@ -91,7 +91,7 @@ export const fetchAllVendors = createAsyncThunk<Vendor[], void, { rejectValue: s
 //user side
 export const fetchAllVendors2 = createAsyncThunk("vendors/fetchAll", async (_, { rejectWithValue }) => {
   try {
-      const response = await axios.get("http://localhost:5000/all-vendors2"); // Update with your API endpoint
+      const response = await axios.get(`${API_BASE}/all-vendors2`); // Update with your API endpoint
       return response.data;
   } catch (error) {
       return rejectWithValue("Failed to fetch vendors");
@@ -234,7 +234,7 @@ export const updateProduct = createAsyncThunk<Product, any, { rejectValue: strin
 );
 export const fetchVendorProductsByStoreId = createAsyncThunk<Product[], string, { rejectValue: string }>(
   'products/fetchVendorProductsByStoreId',
-  async ({store_id}, { rejectWithValue }) => {
+  async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${API_BASE}/vendor-products/${store_id}`);
       return response.data;
@@ -258,9 +258,9 @@ export const fetchProductsByCategory = createAsyncThunk(
   }
 );
 
-export const fetchVendorDetails2 = createAsyncThunk("vendors/fetchDetails2", async ({ store_id }, { rejectWithValue }) => {
+export const fetchVendorDetails2 = createAsyncThunk("vendors/fetchDetails2", async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
   try {
-      const response = await axios.get(`http://localhost:5000/vendor-details/${store_id}`); // Ensure backend supports this route
+      const response = await axios.get(`${API_BASE}/${store_id}`); // Ensure backend supports this route
       return response.data;
   } catch (error) {
       return rejectWithValue("Failed to fetch vendor details");

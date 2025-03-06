@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 
 interface ExploreProductProps {
-    category: string;
+    category?: string;
 }
 
 function Vendors({ category }: ExploreProductProps) {

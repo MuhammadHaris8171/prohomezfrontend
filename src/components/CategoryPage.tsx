@@ -6,8 +6,8 @@ import ProductGrid from "./ProductGrid";
 const CategoryPage: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   return (
-    <div>
-      <h1>Category: {category}</h1>
+    <div className="m-4 flex flex-col">
+      <h1 >{category}</h1>
       <ProductGrid category={category || "luxury appartments"} />
     </div>
   );

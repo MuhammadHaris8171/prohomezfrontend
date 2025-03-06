@@ -1,6 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from '../style/VendorCard.module.css';
-import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 interface Vendor {
@@ -13,7 +12,7 @@ interface Vendor {
 }
 
 interface ProductCardProps {
-  vendor: Vendor;
+  vendor?: Vendor;
 }
 
 function VendorCard({ vendor }: ProductCardProps) {

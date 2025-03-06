@@ -59,11 +59,13 @@ function Footer() {
                           <li className={`${styles.footerlist}`}><Link to="/home-products" className={`${styles.footerlistLink} text-decoration-none`}>Home Products<FaArrowRightLong /></Link></li>
                           <li className={`${styles.footerlist}`}><Link to="/vendor-registration" className={`${styles.footerlistLink} text-decoration-none`}>Become Pro Vendors<FaArrowRightLong /></Link></li>
                           <li className={`${styles.footerlist}`}><Link to="/contact" className={`${styles.footerlistLink} text-decoration-none`}>Contact Us<FaArrowRightLong /></Link></li>
+                          <li className={`${styles.footerlist}`}><Link to="/About-Us" className={`${styles.footerlistLink} text-decoration-none`}>About Us<FaArrowRightLong /></Link></li>
+
                       </ul>
                     </div>
                     <div className="col-sm-6 col-md-5 mb-5 mb-sm-3 mb-md-0">
                       <h5 className={`${styles.footerHeading} mb-sm-4`}>Search Here</h5>
-                      <SearchBox />
+                      <SearchBox/>
                     </div>
                     <div className="col-sm-6  mb-5 mb-sm-3 mb-md-0">
                       <ul className={`${styles.socialMediaIcons} d-flex gap-3 list-unstyled mb-0`}>
@@ -82,7 +84,6 @@ function Footer() {
                       <div className="col-12">
                         <p className={`${styles.copyrightClaim} mb-0 py-3 d-flex justify-content-between`}>
                           <span>&copy; {new Date().getFullYear()} All Rights Reserved.</span>
-                          <span>Developed By <a href="https://sigma6digital.com/" target="_blank" className={`${styles.creatorLink}`}>Sigma 6 Digital</a></span>
                           </p>                    
                       </div>
                   </div>

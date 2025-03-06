@@ -11,6 +11,7 @@ interface CartProduct {
   discountedPrice?: number;
   quantity: number;
   featureImage?: string;
+  store_id?:string
 }
 
 function AddToCart() {

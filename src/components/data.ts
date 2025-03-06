@@ -1,15 +1,12 @@
 import categoryImg from "../assets/images/category-temporary.webp";
-import { Category, Feature, ParentCategoryPageContent, ProductDetail, ProductList } from './types';
+import { Category, Feature, ParentCategoryPageContent, ProductList } from './types';
 import HomeProductBgImg from '../assets/images/home-product-hero-bg.webp'
 import RealEstateBgImg from '../assets/images/real-estate-hero-bg.webp'
 import vendorLogo from '../assets/images/vendor-temporary.webp'
 import ProductDummyImg from '../assets/images/product-dummy-img.webp'
 
 import realEstateProductONe from '../assets/images/realEstateProduct-1.webp'
-import realEstateProductTwo from '../assets/images/realEstateProduct-2.webp'
-import realEstateProductThree from '../assets/images/realEstateProduct-3.webp'
-import realEstateProductFour from '../assets/images/realEstateProduct-4.webp'
-import realEstateProductFive from '../assets/images/realEstateProduct-5.webp'
+
 
 export const vendors: Feature[] = [
   { name: "Wood In-out", parentCategory: "Home Products", featureImage: vendorLogo, src: "#", },

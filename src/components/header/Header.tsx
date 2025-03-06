@@ -27,10 +27,7 @@ function Header() {
     <header className={styles.head}>
       <div className={styles.container}>
         <div className={styles.navbar}>
-          {/* Logo */}
-          <Link to="/" className={styles.logo}>
-            <img src={proHomezLogo} alt="ProHomez Logo" className={styles.headerLogo} />
-          </Link>
+         
 
           {/* Desktop Navigation */}
           <nav className={styles.navLinks}>
@@ -47,6 +44,11 @@ function Header() {
               Contact
             </NavLink>
           </nav>
+
+           {/* Logo */}
+           <Link to="/" className={styles.logo}>
+            <img src={proHomezLogo} alt="ProHomez Logo" className={styles.headerLogo} />
+          </Link>
 
           {/* Right Side (Icons + Login) */}
           <div className={styles.rightSection}>

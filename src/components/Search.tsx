@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import styles from "../style/Search.module.css";
+const API_BASE = import.meta.env.VITE_PROHOMEZ_BACKEND_URL;
 
 interface Product {
   productName: string;
@@ -28,7 +29,7 @@ const Search:React.FC<ProductGridProps> = ({ mainCategory }) => {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:5000/products/?search=${searchQuery}`, {
+        const response = await fetch(`${API_BASE}/products/?search=${searchQuery}`, {
           headers: { Accept: "application/json" },
         });
 
@@ -48,7 +49,7 @@ const Search:React.FC<ProductGridProps> = ({ mainCategory }) => {
     };
 
     fetchProducts();
-  }, [searchQuery, products.length]); // 🔴 Depend on `products.length` to prevent re-fetching
+  }, [searchQuery, products.length]);
 
   return (
     <div className={styles.searchContainer}>
@@ -68,7 +69,7 @@ const Search:React.FC<ProductGridProps> = ({ mainCategory }) => {
           >
             {/* Ensure correct image URL */}
             <img 
-              src={product.featureImage.startsWith("http") ? product.featureImage : `http://localhost:5000/images/${product.featureImage}`} 
+              src={product.featureImage.startsWith("http") ? product.featureImage : `${API_BASE}/images/${product.featureImage}`} 
               alt={product.productName} 
               className={styles.searchImage1}
               onError={(e) => { 

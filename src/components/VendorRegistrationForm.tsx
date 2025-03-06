@@ -174,7 +174,7 @@ function VendorRegistrationForm() {
       <div className={`${styles.vendorRegistrationFormBox}`}>
         <form onSubmit={handleSubmit}>
           <div className="row">
-            {['firstName', 'lastName', 'storeName', 'address1', 'address2', 'city', 'state', 'country', 'postcode'].map((field) => (
+            {['firstName', 'lastName', 'storeName', 'address1', 'address2', 'city', 'state', 'postcode'].map((field) => (
               <div className="col-12" key={field}>
                 <div className={`${styles.inputBox} position-relative pt-4 mt-2`}>
                   <input
@@ -192,6 +192,28 @@ function VendorRegistrationForm() {
                 {errors[field] && <small className="text-danger d-block mt-1">{errors[field]}</small>}
               </div>
             ))}
+
+<div className="col-12">
+  <div className={`${styles.inputBox} ${styles.selectionBox} position-relative pt-4 mt-2`}>
+    <select
+      name="country"
+      value={formData.country}
+      onChange={handleChange}
+      className="w-100 py-2 px-2 rounded-3 position-relative"
+    >
+      <option value="">
+        Select Country
+      </option>
+      <option value="Pakistan">Pakistan</option>
+      <option value="UAE">United States</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="United States">United States</option>
+
+    </select>
+    {errors.country && <small className="text-danger">{errors.country}</small>}
+  </div>
+</div>
+
             
             <div className="col-12">
               <div className={`${styles.inputBox} position-relative pt-4 mt-2`}>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import styles from '../style/SearchBox.module.css';
+const API_BASE = import.meta.env.VITE_PROHOMEZ_BACKEND_URL;
 
 interface Product {
   productName: string;
@@ -13,7 +14,7 @@ interface ProductGridProps {
   mainCategory: string;
 }
 
-const SearchBox:React.FC<ProductGridProps> = ({ mainCategory }) => {
+const SearchBox:React.FC<ProductGridProps> = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [showResults, setShowResults] = useState(false);
@@ -29,7 +30,7 @@ const SearchBox:React.FC<ProductGridProps> = ({ mainCategory }) => {
       try {
         console.log(`Fetching products for: ${searchTerm}`);
 
-        const response = await fetch(`http://localhost:5000/products?search=${searchTerm}`, {
+        const response = await fetch(`${API_BASE}/products?search=${searchTerm}`, {
           headers: { 'Accept': 'application/json' },
         });
 
