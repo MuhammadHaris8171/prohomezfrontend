@@ -43,7 +43,8 @@ function HomeProductDetail() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [currency, setCurrency] = useState("USD");
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  
+  // const [currency, setCurrency] = useState("USD");
+ 
 
   useEffect(() => {
     if (slug) {
@@ -120,11 +121,22 @@ function HomeProductDetail() {
                     ))}
                 </div>
                 <div className={`${styles.productPriceBox} d-flex py-3 align-items-end`}>
-                  <h4 className={`${styles.productDiscountedPrice} mb-0`}>
-                    ${product.discountedPrice > 0 ? product.discountedPrice : product.productPrice}
-                  </h4>
+                <h4 className={`${styles.productDiscountedPrice} mb-0`}>
+  {currency} {convertPrice(product.discountedPrice > 0 ? product.discountedPrice : product.productPrice)}
+</h4>
+
                   {product.discountedPrice > 0 && <h4 className={`${styles.productPrice} mb-0`}>${product.productPrice}</h4>}
                 </div>
+                <div className="currency-selector mt-2.5 mb-5">
+  <label>Select Currency: </label>
+  <select value={currency} onChange={handleCurrencyChange} className='font-extrabold'>
+    <option value="USD">USD ($)</option>
+    <option value="PKR">PKR (₨)</option>
+    <option value="AED">AED (د.إ)</option>
+    <option value="GBP">GBP (£)</option>
+  </select>
+</div>
+
                 <div className={`d-flex gap-3 align-items-center my-3`}>
                   <div className={`${styles.cartValueBox} d-flex align-items-center`}>
                     <span className={`${styles.cartvalueController}`} onClick={() => setValue((prev) => Math.max(1, prev - 1))}>
