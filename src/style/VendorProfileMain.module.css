@@ -49,6 +49,8 @@
     .vendorInfo {
       font-size: 1rem;
     }
+
+   
   }
   
   .aboutSection {
@@ -107,5 +109,29 @@
     .productItem {
       width: 30%;
     }
+
+    
   }
-  
+
+    
+  @media (max-width: 768px) {
+  .aboutSection {
+    background-color: #f3f4f6; /* Gray-100 */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding:5em;
+    margin: 10px;
+    margin-top: 1.5rem;
+  }
+
+  .aboutTitle {
+    font-size: 5em;
+    font-weight: 600;
+    color: #374151; /* Gray-700 */
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 3.25rem;
+  }
+}

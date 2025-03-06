@@ -17,20 +17,25 @@ function RealEstateListingAgentSidebar({vendorDetail}: RealEstateListingProps) {
     console.log(singleProduct)
   return (
     <>
-        <div className={`${styles.realEstateListingAgent}`} onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)}>
+        <div className={`${styles.realEstateListingAgent}`}>
             <h5  className={`${styles.listingAgentHeading}`}>Listing Agent</h5>
             <div className={`${styles.listingAgentDetailBox} d-flex my-4`}>
                 <div className={`${styles.imgBox}`}>
-                    <img onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} src={vendorDetail.image || vendorLogo} alt="ProHomez" />
+                    <a className='flex justify-center' href={`/vendor/profile/${singleProduct.storeId}`}>
+                    <img src={vendorDetail.image || vendorLogo} alt="ProHomez" />
+                    </a>
                 </div>
                 <div className={`${styles.listingAgentDetail}`}>
-                    <h4 className={`${styles.vendorName}`}>{vendorDetail.store_name}</h4>
-                    <p className={`${styles.vendorDetail} mb-0`}>{vendorDetail.email}</p>
-                    <p className={`${styles.vendorDetail} mb-0`}>{vendorDetail.store_phone}</p>
+                    <a className='no-underline text-black' href={`/vendor/profile/${singleProduct.storeId}`}>
+
+                    <h4 onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorName}`}>{vendorDetail.store_name}</h4>
+                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.email}</p>
+                    <p onClick={()=>navigate(`/vendor/profile/${singleProduct.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.store_phone}</p>
+                    </a>
                 </div>
             </div>
                 <div className={`${styles.contactButtons} pt-3`}>
-                    <a href={`tel:${cleanedPhoneNumber}`} className={`${styles.vendorContactBtn} text-decoration-none btn`}>Speak with Agent</a>
+                    <a href={`tel:+923155625755`} className={`${styles.vendorContactBtn} text-decoration-none btn`}>Speak with Agent</a>
                     <a href={`mailto:${vendorDetail.email}`} className={`${styles.vendorContactBtn} text-decoration-none btn`}>Reach Out via Email</a>
                 </div>
         </div>

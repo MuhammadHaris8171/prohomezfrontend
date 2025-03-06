@@ -3,6 +3,8 @@ import styles from "./Checkout.module.css";
 import { useNavigate } from "react-router-dom";
 import { TbShoppingCartCheck } from "react-icons/tb";
 import axios from "axios";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
 
 interface CartProduct {
   id: number;
@@ -11,6 +13,7 @@ interface CartProduct {
   discountedPrice?: number;
   quantity: number;
   slug: "";
+  store_id:string;
 }
 
 function Checkout() {
@@ -27,7 +30,10 @@ function Checkout() {
     country: "",
     postalCode: "",
   });
-  const [popupVisible, setPopupVisible] = useState(false); // Controls the popup visibility
+  const [popupVisible, setPopupVisible] = useState(false); 
+  const [mapCenter, setMapCenter] = useState<{ lat: number; lng: number } | null>(null);
+  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Store your API key in .env
+
   const [orderId, setOrderId] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -61,6 +67,7 @@ function Checkout() {
             productPrice: item.productPrice,
             discountedPrice: item.discountedPrice,
             quantity: item.quantity,
+            store_id:item.store_id
           })),
           totalCost: calculateTotal(),
         },
@@ -71,7 +78,9 @@ function Checkout() {
         }
       );
 
-      const data = response.data; // Retrieve response data containing orderId
+      
+      const data = response.data; 
+      console.log(response)
       setOrderId(data.orderId);
       // If successful, show the popup
       setPopupVisible(true);
@@ -106,7 +115,7 @@ function Checkout() {
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder="Full Name*"
               value={clientDetails.name}
               onChange={handleInputChange}
               required
@@ -115,7 +124,7 @@ function Checkout() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Email*"
               value={clientDetails.email}
               onChange={handleInputChange}
               className={styles.inputField}
@@ -123,7 +132,7 @@ function Checkout() {
             <input
               type="text"
               name="phone"
-              placeholder="Phone Number"
+              placeholder="Phone Number*"
               value={clientDetails.phone}
               onChange={handleInputChange}
               required
@@ -132,7 +141,7 @@ function Checkout() {
             <input
               type="text"
               name="address"
-              placeholder="Address"
+              placeholder="Address*"
               value={clientDetails.address}
               onChange={handleInputChange}
               required
@@ -141,7 +150,7 @@ function Checkout() {
             <input
               type="text"
               name="city"
-              placeholder="City"
+              placeholder="City*"
               value={clientDetails.city}
               onChange={handleInputChange}
               required
@@ -150,7 +159,7 @@ function Checkout() {
             <input
               type="text"
               name="state"
-              placeholder="State"
+              placeholder="State*"
               value={clientDetails.state}
               onChange={handleInputChange}
               className={styles.inputField}
@@ -158,7 +167,7 @@ function Checkout() {
             <input
               type="text"
               name="country"
-              placeholder="Country"
+              placeholder="Country*"
               value={clientDetails.country}
               onChange={handleInputChange}
               required
@@ -167,7 +176,7 @@ function Checkout() {
             <input
               type="text"
               name="postalCode"
-              placeholder="Postal Code"
+              placeholder="Postal Code*"
               value={clientDetails.postalCode}
               onChange={handleInputChange}
               className={styles.inputField}
@@ -211,8 +220,22 @@ function Checkout() {
               </div>
             </div>
           )}
+      {/* Google Map */}
+      <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", marginTop: "10px" }}>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.1880738890477!2d73.14565107330503!3d33.57446578390745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed29312b725d%3A0xed42137e02f8517a!2sEducare%20Direct%20International!5e0!3m2!1sen!2s!4v1741204028366!5m2!1sen!2s" 
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "0" }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
         </div>
       </div>
+
+
+
     </div>
   );
 }
