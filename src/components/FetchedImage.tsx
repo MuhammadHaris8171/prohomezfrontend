@@ -1,9 +1,7 @@
 import { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 import styles from '../style/FetchedImage.module.css';
 
 interface GalleryBoxProps {
@@ -11,7 +9,7 @@ interface GalleryBoxProps {
     images?: string[];
 }
 
-function FetchedImage({ featureImage, images = [] }: GalleryBoxProps) {
+function FetchedImage({ images = [] }: GalleryBoxProps) {
     const imageBaseUrl = import.meta.env.VITE_PROHOMEZ_BACKEND_URL;
     const [selectedIndex, setSelectedIndex] = useState(0);
     const swiperRef = useRef<any>(null);

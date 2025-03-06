@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "../style/VendorDisplay.module.css";
-import vendorLogo from "../assets/images/vendor-temporary.webp";
 import VendorCard from "./VendorCard";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { fetchAllVendors } from "../features/products/productSlice";
@@ -8,11 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 
 
-interface Vendor {
-    name: string;
-    featureImage?: string;
-    src?: string;
-}
+
 
 function VendorDisplay() {
         const dispatch = useDispatch<AppDispatch>();

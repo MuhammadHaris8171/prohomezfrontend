@@ -87,6 +87,8 @@ export interface Product {
   realEstateDetails?: PropertyDetails;
   quantity?: number;
   amenities?: string[];
+  storeId?:string;
+  category?:string;
 }
 
 export interface Vendor {

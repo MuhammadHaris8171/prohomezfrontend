@@ -25,9 +25,11 @@ import axios from 'axios';
 import Vendors from './components/Vendors.tsx';
 import About from './pages/About/About.tsx';
 import VendorProfilePage from './pages/VendorProfilePage/VendorProfilePage.tsx';
+const API_BASE = import.meta.env.VITE_PROHOMEZ_BACKEND_URL;
 
+console.warn = () => {}; 
 // Set default base URL for all axios requests
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = `${API_BASE}`;
 
 // Utility function to check authentication
 const isAuthenticated = () => {
