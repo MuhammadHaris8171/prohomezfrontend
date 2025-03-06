@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../style/ProductGrid.module.css"; 
+const API_BASE = import.meta.env.VITE_PROHOMEZ_BACKEND_URL;
 
 interface Product {
   id: string;
@@ -19,7 +20,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ category }) => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/productsby?category=${encodeURIComponent(category)}`)
+    fetch(`${API_BASE}/productsby?category=${encodeURIComponent(category)}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(Array.isArray(data) ? data : []);

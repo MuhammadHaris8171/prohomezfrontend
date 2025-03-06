@@ -115,7 +115,7 @@ function Checkout() {
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder="Full Name*"
               value={clientDetails.name}
               onChange={handleInputChange}
               required
@@ -124,7 +124,7 @@ function Checkout() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Email*"
               value={clientDetails.email}
               onChange={handleInputChange}
               className={styles.inputField}
@@ -132,7 +132,7 @@ function Checkout() {
             <input
               type="text"
               name="phone"
-              placeholder="Phone Number"
+              placeholder="Phone Number*"
               value={clientDetails.phone}
               onChange={handleInputChange}
               required
@@ -141,7 +141,7 @@ function Checkout() {
             <input
               type="text"
               name="address"
-              placeholder="Address"
+              placeholder="Address*"
               value={clientDetails.address}
               onChange={handleInputChange}
               required
@@ -150,7 +150,7 @@ function Checkout() {
             <input
               type="text"
               name="city"
-              placeholder="City"
+              placeholder="City*"
               value={clientDetails.city}
               onChange={handleInputChange}
               required
@@ -159,7 +159,7 @@ function Checkout() {
             <input
               type="text"
               name="state"
-              placeholder="State"
+              placeholder="State*"
               value={clientDetails.state}
               onChange={handleInputChange}
               className={styles.inputField}
@@ -167,7 +167,7 @@ function Checkout() {
             <input
               type="text"
               name="country"
-              placeholder="Country"
+              placeholder="Country*"
               value={clientDetails.country}
               onChange={handleInputChange}
               required
@@ -176,7 +176,7 @@ function Checkout() {
             <input
               type="text"
               name="postalCode"
-              placeholder="Postal Code"
+              placeholder="Postal Code*"
               value={clientDetails.postalCode}
               onChange={handleInputChange}
               className={styles.inputField}
