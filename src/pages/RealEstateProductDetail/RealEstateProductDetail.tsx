@@ -36,24 +36,36 @@ function RealEstateProductDetail() {
   }, [slug, dispatch]);
 
   useEffect(() => {
-    if (product && product.category) {
-      dispatch(fetchProductsByCategory(product?.category));
-    }
-  }, [product, dispatch]);
+  if (product?.category) {
+    dispatch(fetchProductsByCategory(product.category as string));
+  }
+}, [product, dispatch]);
+
 
   if (productStatus === 'loading' || !product) {
     return <div>Loading...</div>;
   }
 
   // Parse JSON safely
-  const realEstateDetails = product.realEstateDetails ? JSON.parse(product?.realEstateDetails) : {};
+  const realEstateDetails = 
+  product.realEstateDetails && typeof product.realEstateDetails === "string"
+    ? JSON.parse(product.realEstateDetails)
+    : product.realEstateDetails || {}; 
+
   const selectedImages = Array.isArray(product.selectedImages)
     ? product.selectedImages
     : product.selectedImages
     ? JSON.parse(product.selectedImages)
     : [];
-  const vendorDetails = product.vendorDetails ? JSON.parse(product?.vendorDetails) : {};
-  const amenities = product.amenities ? JSON.parse(product?.amenities) : [];
+    const vendorDetails = 
+    product.vendorDetails && typeof product.vendorDetails === "string"
+      ? JSON.parse(product.vendorDetails)
+      : product.vendorDetails || {}; 
+  
+  const amenities = product.amenities 
+  ? (Array.isArray(product.amenities) ? product.amenities : JSON.parse(product.amenities)) 
+  : [];
+
 
   // Description truncation
   const truncateDescription = (description: string | null, maxWords: number) => {

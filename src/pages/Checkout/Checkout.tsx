@@ -225,7 +225,7 @@ function Checkout() {
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.1880738890477!2d73.14565107330503!3d33.57446578390745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed29312b725d%3A0xed42137e02f8517a!2sEducare%20Direct%20International!5e0!3m2!1sen!2s!4v1741204028366!5m2!1sen!2s" 
           style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "0" }}
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

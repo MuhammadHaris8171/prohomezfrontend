@@ -8,7 +8,7 @@ interface Vendor {
   name?: string;
   store_id?:string,
   store_name?:string,
-  image?:string
+  image?:string | null
 }
 
 interface ProductCardProps {
@@ -25,16 +25,16 @@ function VendorCard({ vendor }: ProductCardProps) {
     
   //  }
   useEffect(() => {
-    if (vendor.image) {
+    if (vendor?.image) {
       setPreviewImage(`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${vendor.image}`);
     }
-  }, [vendor.image]);
-
+  }, [vendor?.image]);
+  
 
     console.log(vendor)
   return (
     <>
-        <Link to={`/vendor/profile/${vendor.store_id}`} className='text-decoration-none'>
+        <Link to={`/vendor/profile/${vendor?.store_id ?? ""}`} className='text-decoration-none'>
           <div className={styles.cardBox}>
             {
                 <div className={`${styles.imgBox}`}>
@@ -45,7 +45,7 @@ function VendorCard({ vendor }: ProductCardProps) {
                           )}                
                     </div>
             }
-              <h5 className={`${styles.cardBoxName}`}>{vendor.store_name}</h5>
+             <h5 className={`${styles.cardBoxName}`}>{vendor?.store_name || "No Store Name"}</h5>
           </div>
         </Link>
     </>

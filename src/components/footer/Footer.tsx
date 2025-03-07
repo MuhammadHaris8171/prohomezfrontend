@@ -65,7 +65,7 @@ function Footer() {
                     </div>
                     <div className="col-sm-6 col-md-5 mb-5 mb-sm-3 mb-md-0">
                       <h5 className={`${styles.footerHeading} mb-sm-4`}>Search Here</h5>
-                      <SearchBox/>
+                      <SearchBox mainCategory="home products"/>
                     </div>
                     <div className="col-sm-6  mb-5 mb-sm-3 mb-md-0">
                       <ul className={`${styles.socialMediaIcons} d-flex gap-3 list-unstyled mb-0`}>

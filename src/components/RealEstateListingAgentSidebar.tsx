@@ -25,8 +25,10 @@ function RealEstateListingAgentSidebar({vendorDetail}: RealEstateListingProps) {
                     </a>
                 </div>
                 <div className={`${styles.listingAgentDetail}`}>
-                    <a className='no-underline text-black' href={`/vendor/profile/${singleProduct.storeId}`}>
-
+                <a
+  className="no-underline text-black"
+  href={singleProduct?.storeId ? `/vendor/profile/${singleProduct.storeId}` : "#"}
+>
                     <h4 onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorName}`}>{vendorDetail.store_name}</h4>
                     <p onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.email}</p>
                     <p onClick={()=>navigate(`/vendor/profile/${singleProduct?.storeId}`)} className={`${styles.vendorDetail} mb-0`}>{vendorDetail.store_phone}</p>

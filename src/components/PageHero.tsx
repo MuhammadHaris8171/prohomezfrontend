@@ -20,7 +20,7 @@ const PageHero: React.FC<PageHeroProps> = ({
             <h2 className={`${styles.pageHeroHeading} mb-0`}>{heading}</h2>
             {description && <p className={`${styles.pageHeroDescription} mb-0`}>{description}</p>}
             <div className={`${styles.searchBoxContainer} w-100`}>
-              <SearchBox />
+            <SearchBox mainCategory="home products" />
               <div className={`${styles.inputQuickSearches}`}>
                 <p className={`${styles.inputQuickSearchPara} py-4`}>
                   <QuickSearchLinks quickSearches={quickSearches} />

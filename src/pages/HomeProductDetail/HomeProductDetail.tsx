@@ -26,7 +26,7 @@ import { IoBed } from "react-icons/io5";
 import { GiBathtub } from "react-icons/gi";
 // import { MdOutlineArrowDropUp, MdSquareFoot } from "react-icons/md";
 // import { IoMdArrowDropdown } from "react-icons/io";
-import RealEstateListingAgentSidebar from "../../components/ho";
+import RealEstateListingAgentSidebar from "../../components/RealEstateListingAgentSidebar";
 // import { Link } from "react-router-dom";
 
 function HomeProductDetail() {
@@ -61,10 +61,11 @@ function HomeProductDetail() {
 
   useEffect(() => {
     if (categoryProducts.length > 0) {
-      const productsWithReviews = categoryProducts.filter((p) => p.reviews?.length > 0);
+      const productsWithReviews = categoryProducts.filter((p: any) => p.reviews?.length > 0);
+
 
       if (productsWithReviews.length > 0) {
-        const highestReviewedProduct = productsWithReviews.sort((a, b) => b.reviews.length - a.reviews.length)[0];
+        const highestReviewedProduct = productsWithReviews.sort((a, b) => (b as any).reviews.length - (a as any).reviews.length)[0];
         setSuggestedProducts([highestReviewedProduct]);
       } else {
         const shuffledProducts = [...categoryProducts].sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -122,11 +123,13 @@ function HomeProductDetail() {
                 </div>
                 <div className={`${styles.productPriceBox} d-flex py-3 align-items-end`}>
                 <h4 className={`${styles.productDiscountedPrice} mb-0`}>
-  {currency} {convertPrice(product.discountedPrice > 0 ? product.discountedPrice : product.productPrice)}
+                {currency} {convertPrice(product.discountedPrice ?? product.productPrice)}
 </h4>
 
-                  {product.discountedPrice > 0 && <h4 className={`${styles.productPrice} mb-0`}>${product.productPrice}</h4>}
-                </div>
+{product.discountedPrice !== undefined && product.discountedPrice > 0 && (
+  <h4 className={`${styles.productPrice} mb-0`}>${product.productPrice}</h4>
+)}
+</div>
                 <div className="currency-selector mt-2.5 mb-5">
   <label>Select Currency: </label>
   <select value={currency} onChange={handleCurrencyChange} className='font-extrabold'>
@@ -154,8 +157,14 @@ function HomeProductDetail() {
                   </div>
                   <button className={`${styles.addToCartBtn} btn`} onClick={() => {
                     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                    localStorage.setItem('cart', JSON.stringify([...cart.filter((item) => item.id !== product.id), { ...product, quantity: value }]));
-                    alert('Product added to cart successfully!');
+                    localStorage.setItem(
+                      "cart",
+                      JSON.stringify([
+                          ...cart.filter((item: Product) => item.id !== product.id),
+                          { ...product, quantity: value },
+                      ])
+                  );
+                  alert('Product added to cart successfully!');
                   }}>
                     Add To Cart
                   </button>

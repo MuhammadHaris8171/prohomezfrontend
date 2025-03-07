@@ -232,9 +232,9 @@ export const updateProduct = createAsyncThunk<Product, any, { rejectValue: strin
     }
   }
 );
-export const fetchVendorProductsByStoreId = createAsyncThunk<Product[], string, { rejectValue: string }>(
+export const fetchVendorProductsByStoreId = createAsyncThunk<Product[], { store_id: string }, { rejectValue: string }>(
   'products/fetchVendorProductsByStoreId',
-  async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
+  async ({ store_id }, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${API_BASE}/vendor-products/${store_id}`);
       return response.data;
@@ -246,16 +246,17 @@ export const fetchVendorProductsByStoreId = createAsyncThunk<Product[], string, 
     }
   }
 );
-export const fetchProductsByCategory = createAsyncThunk(
+
+export const  fetchProductsByCategory = createAsyncThunk(
   "products/fetchProductsByCategory",
-  async (category, { rejectWithValue }) => {
+  async (category: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${API_BASE}/products?category=${category}`);
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Failed to fetch category products");
+      return rejectWithValue(error || "Failed to fetch category products");
     }
-  }
+  } 
 );
 
 export const fetchVendorDetails2 = createAsyncThunk("vendors/fetchDetails2", async ({ store_id }: { store_id: string }, { rejectWithValue }) => {
@@ -356,7 +357,7 @@ const productSlice = createSlice({
       })
       .addCase(fetchProductsByCategory.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.payload || "Failed to fetch category products";
+        state.error = typeof action.payload === "string" ? action.payload : "Failed to fetch category products";
       })
 
       // Fetch single product
@@ -461,7 +462,8 @@ const productSlice = createSlice({
       })
       .addCase(fetchVendorProductsByStoreId.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.payload || 'Failed to fetch vendor products';
+        state.error = typeof action.payload === "string" ? action.payload : 'Failed to fetch vendor products';
+
       })
             // Fetch products by category
             // .addCase(fetchProductsByCategory.pending, (state) => {

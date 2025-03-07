@@ -133,7 +133,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/search',
-        element: <Search />,
+        element: <Search mainCategory="Home Products" />,
       },
       {
         path: '/category/:category',
