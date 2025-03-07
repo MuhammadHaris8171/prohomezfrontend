@@ -29,9 +29,9 @@ const VendorProfileMain = () => {
       {/* Vendor Profile Section */}
       <div className={styles.profileSection}>
         {/* Vendor Profile Image */}
-        {vendor?.image && (
+        {(vendor as any)?.image && (
           <img
-            src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${vendor.image}`}
+          src={`${import.meta.env.VITE_PROHOMEZ_BACKEND_URL}/images/${(vendor as any)?.image}`}
             alt="Vendor Profile"
             className={styles.profileImage}
             onError={(e) => (e.currentTarget.src = "/default-profile.png")}
@@ -39,17 +39,18 @@ const VendorProfileMain = () => {
         )}
 
         {/* Vendor Details */}
-        <h1 className={styles.vendorName}>{vendor?.store_name}</h1>
-        <p className={styles.vendorInfo}>{vendor?.address1 || "Address not available"}</p>
+        <h1 className={styles.vendorName}>{(vendor as any)?.store_name}</h1>
+        <p className={styles.vendorInfo}>{(vendor as any)?.address1 || "Address not available"}</p>
         <p className={styles.vendorInfo}>
-          📧 {vendor?.email || "Email not available"} | 📞 {vendor?.phone || "Phone not available"}
+        📧 {(vendor as any)?.email || "Email not available"} | 📞 {(vendor as any)?.phone || "Phone not available"}
+
         </p>
       </div>
 
       {/* About Section */}
       <div className={styles.aboutSection}>
-        <h2 className={styles.aboutTitle}>About {vendor?.store_name}</h2>
-        <p className={styles.description}>{vendor?.description || "No description available."}</p>
+      <h2 className={styles.aboutTitle}>About {(vendor as any)?.store_name}</h2>
+        <p className={styles.description}>{(vendor as any)?.description || "No description available."}</p>
       </div>
 
       {/* Products Section */}

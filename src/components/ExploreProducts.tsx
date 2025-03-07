@@ -64,7 +64,8 @@ function ExploreProducts({ category }: ExploreProductProps) {
                                     className={`${styles.categoriesDisplayBtn} btn ${
                                         activeCategory === cat ? styles.categoryActive : ""
                                     }`}
-                                    onClick={() => setActiveCategory(cat)}
+                                    onClick={() => setActiveCategory(cat || "home products")}
+
                                 >
                                     {cat}
                                 </button>

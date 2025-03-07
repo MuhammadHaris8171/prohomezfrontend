@@ -68,7 +68,7 @@ function Vendors({ category }: ExploreProductProps) {
                             ) : (
                                 filteredVendors.map((vendor,index) => (
                                     <div className="col-md-3 pt-4 px-2" key={index}>
-                   <VendorCard key={vendor.store_id} vendor={vendor} />
+                   <VendorCard key={vendor.store_id} vendor={{ ...vendor, image: vendor.image ?? "" }} />
                     </div>
                                 ))
                             )}

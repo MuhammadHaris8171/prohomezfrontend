@@ -13,7 +13,7 @@ interface ProductListProp {
 
 function VendorsList({ content, setMessage }: ProductListProp) {
   // Only vendors should be toggleable, not admins
-  const [isVendorActive, setIsVendorActive] = useState(content.vendor_status === 1);
+  const [isVendorActive, setIsVendorActive] = useState(Number(content.vendor_status) === 1);
   const dispatch = useDispatch<AppDispatch>();
 
   const handleAccessToggle = async () => {
@@ -25,7 +25,11 @@ function VendorsList({ content, setMessage }: ProductListProp) {
     try {
       const newStatus = isVendorActive ? 0 : 1;
 
-      const response = await dispatch(updateVendorAccess({ vendorId: content.store_id, newStatus }));
+      const response = await dispatch(updateVendorAccess({ 
+        vendorId: content.store_id, 
+        newStatus: String(newStatus)  // Convert number to string
+      }));
+      
 
       if (response.payload) { // Ensure API success
         setIsVendorActive(newStatus === 1);
